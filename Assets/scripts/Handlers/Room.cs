@@ -16,11 +16,11 @@ public class Room : MonoBehaviour
 
     public Door GetDoor()
     {
-        return door;
+        return door ?? transform.GetComponentInChildren<Door>(true);
     }
 
     public Portal GetPortal()
     {
-        return portal;
+        return portal ?? transform.GetComponentInChildren<Portal>(true);
     }
 }
