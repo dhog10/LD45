@@ -6,6 +6,7 @@ public class HiddenAppear : MonoBehaviour
 {
     public GameObject hideTriggerObject;
     public GameObject disableObject;
+    public GameObject enableObject;
 
     public bool startHidden = true;
     [Tooltip("Minimum time it will stay hidden for.")]
@@ -98,6 +99,11 @@ public class HiddenAppear : MonoBehaviour
 
     public bool IsSeen()
     {
+        if(VisibilityHandler.Instance == null)
+        {
+            return false;
+        }
+
         var camera = Camera.main;
 
         if(camera == null)

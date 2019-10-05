@@ -96,11 +96,8 @@ public class Portal : MonoBehaviour
 
                 var localPosition = transform.InverseTransformPoint(playerObject.transform.position);
 
-                if (!inverted)
-                {
-                    localPosition.x = -localPosition.x;
-                    localPosition.y = -localPosition.y;
-                }
+                localPosition.x = -localPosition.x;
+                localPosition.y = -localPosition.y;
 
                 playerObject.transform.position = destination.transform.TransformPoint(localPosition);
             }            
