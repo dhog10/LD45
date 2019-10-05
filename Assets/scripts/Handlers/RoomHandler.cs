@@ -12,7 +12,7 @@ public class RoomHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.SpawnRoom(rooms[0]);
+        // this.SpawnRoom(rooms[0]);
     }
 
     public void SpawnRoom(GameObject room)

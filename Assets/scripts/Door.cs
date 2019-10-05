@@ -29,7 +29,7 @@ public class Door : MonoBehaviour
             }
         }
 
-        var quat = Quaternion.AngleAxis(-openAngle, transform.up);
+        var quat = Quaternion.AngleAxis(openAngle, transform.up);
         door.transform.rotation = transform.rotation * quat;
     }
 
