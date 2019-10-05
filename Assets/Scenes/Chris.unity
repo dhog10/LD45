@@ -1770,10 +1770,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 10
+  inverted: 0
   destination: {fileID: 38784064}
   player: {fileID: 1371128796}
   portalCamera: {fileID: 1355347215}
   renderTarget: {fileID: 2100000, guid: 1a57970543906c04e94885771b13bea7, type: 2}
+  playerInside: 0
 --- !u!4 &1768864787
 Transform:
   m_ObjectHideFlags: 0
