@@ -16,9 +16,10 @@ public class Portal : MonoBehaviour
     [HideInInspector]
     public bool playerInside = false;
 
-    private bool wasInsideFromFront = false;
     private bool teleporting = false;
     private float lastTeleport = 0f;
+
+    public Transform PortalTransform => mr.transform;
 
     void Start()
     {
@@ -56,12 +57,27 @@ public class Portal : MonoBehaviour
     private void Update()
     {
         this.UpdatePortal();
-        
-        if (Time.time - lastTeleport > 0.5f && playerInside && wasInsideFromFront)
-        {
-            var dot = this.GetPlayerDot();
+    }
 
-            if (inverted ? dot >= 0f : dot <= 0f)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (teleporting || destination == null || playerInside || !this.IsInRoom())
+        {
+            return;
+        }
+
+        var hitObject = other.gameObject;
+
+        var controller = hitObject.GetComponent<PlayerController>();
+
+        if (controller != null)
+        {
+            playerInside = true;
+
+            var dot = this.GetPlayerDot();
+            Debug.Log("dot " + dot);
+
+            if (Time.time - lastTeleport > 0.3f && dot < 0f)
             {
                 lastTeleport = Time.time;
 
@@ -86,30 +102,6 @@ public class Portal : MonoBehaviour
                 }
 
                 playerObject.transform.position = destination.transform.TransformPoint(localPosition);
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (teleporting || destination == null || playerInside || !this.IsInRoom())
-        {
-            return;
-        }
-
-        var hitObject = other.gameObject;
-
-        var controller = hitObject.GetComponent<PlayerController>();
-
-        if (controller != null)
-        {
-            playerInside = true;
-
-            var dot = this.GetPlayerDot();
-
-            if (inverted ? dot < 0f : dot > 0f)
-            {
-                wasInsideFromFront = true;
             }            
         }
     }
@@ -121,7 +113,6 @@ public class Portal : MonoBehaviour
         if (hitObject.GetComponent<PlayerController>() != null)
         {
             playerInside = false;
-            wasInsideFromFront = false;
             teleporting = false;
         }
     }
@@ -227,7 +218,7 @@ public class Portal : MonoBehaviour
 
     private float GetPlayerDot()
     {
-        var origin = transform.position + transform.up * 1.2f;
+        var origin = destination.transform.position + mr.transform.up * 0.2f;
 
         var toPlayer = Vector3.Normalize(playerObject.transform.position - origin);
         return Vector3.Dot(transform.up, toPlayer);
