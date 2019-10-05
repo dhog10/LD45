@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Portal : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class Portal : MonoBehaviour
     public Camera portalCamera;
     public Material renderTarget;
 
+    private GameObject playerObject;
     private MeshRenderer mr;
+    [HideInInspector]
+    public bool playerInside = false;
 
     void Start()
     {
@@ -17,14 +21,84 @@ public class Portal : MonoBehaviour
             portalCamera.targetTexture.Release();
         }
 
-        portalCamera.targetTexture = (RenderTexture)renderTarget.mainTexture ?? new RenderTexture(Screen.width, Screen.height, 24);
-        renderTarget.mainTexture = portalCamera.targetTexture;
+        if(portalCamera != null)
+        {
+            portalCamera.targetTexture = (RenderTexture)renderTarget.mainTexture ?? new RenderTexture(Screen.width, Screen.height, 24);
+            renderTarget.mainTexture = portalCamera.targetTexture;
+        }
 
         mr = this.GetComponent<MeshRenderer>();
+
+        if(player == null)
+        {
+            var playerController = FindObjectOfType<FirstPersonController>();
+            if(playerController != null)
+            {
+                playerObject = playerController.gameObject;
+
+                var camera = playerController.gameObject.GetComponentInChildren<Camera>();
+                if(camera != null)
+                {
+                    player = camera.gameObject;
+                }
+                
+            }
+        }
     }
 
-    void Update()
+    private void Update()
     {
+        this.UpdatePortal();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (playerInside || !this.IsInRoom())
+        {
+            return;
+        }
+
+
+        var hitObject = other.gameObject;
+        Debug.Log("hit " + hitObject);
+        
+        if(hitObject.GetComponent<CharacterController>() != null)
+        {
+            playerInside = true;
+            destination.playerInside = true;
+
+            Debug.Log("teleport");
+            playerObject.transform.position = destination.transform.position + (playerObject.transform.position - transform.position);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        var hitObject = other.gameObject;
+
+        if (hitObject.GetComponent<CharacterController>() != null)
+        {
+            playerInside = false;
+        }
+    }
+
+    public void UpdatePortal()
+    {
+        if (destination == null)
+        {
+            if (portalCamera.gameObject.activeSelf)
+            {
+                portalCamera.gameObject.SetActive(false);
+            }
+
+            if (mr.enabled)
+            {
+                mr.enabled = false;
+            }
+
+            return;
+        }
+
         if (destination.IsInRoom())
         {
             if (!portalCamera.gameObject.activeSelf)
@@ -87,8 +161,8 @@ public class Portal : MonoBehaviour
     }
     private Vector3 GetCameraPosition()
     {
-        var relativePosition = player.transform.position - destination.transform.position;
+        var relativePosition = destination.transform.InverseTransformPoint(player.transform.position);
 
-        return this.transform.position + relativePosition;
+        return this.transform.TransformPoint(relativePosition);
     }
 }
