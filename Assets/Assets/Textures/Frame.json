@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Fishing": {
+        "Frame": {
             "shader": "Main shader"
         }
     }
