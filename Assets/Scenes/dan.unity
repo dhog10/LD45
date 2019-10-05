@@ -3802,5 +3802,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: hideCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: hideCooldownRandom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: showCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: showCooldownRandom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327394167787, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327394167786, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327394167786, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d34cc58f834cef7449b44db638d93bc2, type: 3}
