@@ -82,7 +82,7 @@ public class Portal : MonoBehaviour
     {
         var angDiff = Quaternion.Angle(transform.rotation, destination.transform.rotation);
         var rotDiff = Quaternion.AngleAxis(angDiff, Vector3.up);
-        var direction = -(rotDiff * player.transform.forward);
+        var direction = rotDiff * player.transform.forward;
         return Quaternion.LookRotation(direction, Vector3.up);
     }
     private Vector3 GetCameraPosition()
