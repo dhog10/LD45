@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8333788631112369711
+--- !u!1 &1109471608000670276
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8333788631112369697}
-  - component: {fileID: 8333788631112369698}
-  - component: {fileID: 8333788631112369699}
-  - component: {fileID: 8333788631112369708}
-  - component: {fileID: 8333788631112369709}
-  - component: {fileID: 8333788631112369710}
-  - component: {fileID: 8333788631112369703}
-  - component: {fileID: 8333788631112369696}
+  - component: {fileID: 4125010648873834583}
+  - component: {fileID: 4928624554631963233}
+  - component: {fileID: 1682504029689667224}
+  - component: {fileID: 8954369486078456642}
+  - component: {fileID: 8954369486078456643}
+  - component: {fileID: 8954369486078456640}
+  - component: {fileID: 8954369486078456655}
+  - component: {fileID: 8954369486078456641}
   m_Layer: 0
-  m_Name: Basketball
+  m_Name: BasketBall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8333788631112369697
+--- !u!4 &4125010648873834583
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333788631112369711}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.179, y: 1, z: 0}
+  m_GameObject: {fileID: 1109471608000670276}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 2.2831104, y: 0.2926433, z: 2.7107227}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8333788631112369698
+--- !u!33 &4928624554631963233
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333788631112369711}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8333788631112369699
+  m_GameObject: {fileID: 1109471608000670276}
+  m_Mesh: {fileID: -1688004760210933807, guid: 40fb97619bbf5704d8d39b78b64a33c8, type: 3}
+--- !u!23 &1682504029689667224
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333788631112369711}
+  m_GameObject: {fileID: 1109471608000670276}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: fabbb48dfc9ed1848a917f2dad4c1b84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,26 +83,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8333788631112369708
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333788631112369711}
-  m_Material: {fileID: 13400000, guid: 95df312204aecd149a4ebdbbd9427baa, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8333788631112369709
+--- !u!54 &8954369486078456642
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333788631112369711}
+  m_GameObject: {fileID: 1109471608000670276}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -112,27 +99,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8333788631112369710
-MonoBehaviour:
+--- !u!135 &8954369486078456643
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333788631112369711}
+  m_GameObject: {fileID: 1109471608000670276}
+  m_Material: {fileID: 13400000, guid: 95df312204aecd149a4ebdbbd9427baa, type: 2}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e3cb19177d95b408bf0a75d4152135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickUpPoint: {fileID: 0}
-  pickUpObject: {fileID: 0}
---- !u!82 &8333788631112369703
+  serializedVersion: 2
+  m_Radius: 0.29264334
+  m_Center: {x: 0, y: -0.000000014901165, z: 0}
+--- !u!82 &8954369486078456640
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333788631112369711}
+  m_GameObject: {fileID: 1109471608000670276}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -222,16 +208,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8333788631112369696
+--- !u!114 &8954369486078456655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333788631112369711}
+  m_GameObject: {fileID: 1109471608000670276}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbd555ed8a7760942a2c38a49cab1bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPosition: {fileID: 0}
+  distanceMax: 12
   tickSource: {fileID: 0}
+--- !u!114 &8954369486078456641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109471608000670276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e3cb19177d95b408bf0a75d4152135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpPoint: {fileID: 0}
+  pickUpObject: {fileID: 0}
+  force: 300
