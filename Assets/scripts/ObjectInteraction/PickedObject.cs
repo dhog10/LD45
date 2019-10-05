@@ -9,6 +9,7 @@ public class PickedObject : MonoBehaviour
 
     [SerializeField] private Transform pickUpPoint;
     [SerializeField] private GameObject pickUpObject;
+    [SerializeField] private int force;
 
     private bool pickedUp = false;
 
@@ -66,7 +67,7 @@ public class PickedObject : MonoBehaviour
 
                 objRigidbody.useGravity = true;
                 objRigidbody.isKinematic = false;
-                objRigidbody.AddForce(forceVector * 100);
+                objRigidbody.AddForce(forceVector * force);
             }
 
             this.transform.parent = null;
