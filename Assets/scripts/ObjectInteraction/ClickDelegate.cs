@@ -6,6 +6,7 @@
 public class ClickDelegate : MonoBehaviour
 {
     [SerializeField] private int pickUpRange;
+    [SerializeField] Transform pickUpObject;
 
     public delegate void Clicker(GameObject obj);
     public event Clicker OnClick;
@@ -43,9 +44,11 @@ public class ClickDelegate : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-
-                OnClick(rayHit.transform.gameObject);
-
+                if (pickUpObject.childCount == 0)
+                {
+                    OnClick(rayHit.transform.gameObject);
+                }
+                
             }
 
         }
