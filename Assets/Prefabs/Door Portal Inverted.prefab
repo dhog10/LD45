@@ -127,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 1320280981623914831}
   m_LocalRotation: {x: 0.000000053385083, y: 0.7071068, z: 0.7071068, w: -0.000000053385083}
   m_LocalPosition: {x: -0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1320280980675545739}
   m_RootOrder: 0
@@ -205,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320280981767051349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6122, z: -0}
+  m_LocalPosition: {x: 0, y: 0.34, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1320280980675545738}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 1320280980675545739}
   - component: {fileID: 1320280982097165161}
   m_Layer: 0
-  m_Name: Door Portal
+  m_Name: Door Portal Inverted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,7 +482,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320280982097165158}
-  m_LocalRotation: {x: -0, y: 0.29654354, z: -0, w: 0.95501935}
+  m_LocalRotation: {x: 0, y: 0.2965416, z: 0, w: 0.95501995}
   m_LocalPosition: {x: -15.689995, y: -0.09, z: -16.75}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
