@@ -135,6 +135,17 @@ public class HiddenAppear : MonoBehaviour
             return;
         }
 
+        var camera = Camera.main;
+        if (distanceThreshold > 0f && camera != null)
+        {
+            var distance = Vector3.Distance(camera.transform.position, transform.position);
+
+            if (distance <= distanceThreshold)
+            {
+                return;
+            }
+        }
+
         foreach (var hidden in requiredAppears)
         {
             if (hidden.Hidden)
@@ -173,13 +184,17 @@ public class HiddenAppear : MonoBehaviour
         if(distanceThreshold > 0f && camera != null)
         {
             var distance = Vector3.Distance(camera.transform.position, transform.position);
-
+            Debug.Log("distance " + distance);
             if (distance <= distanceThreshold)
             {
                 return;
             }
         }
-        disableObject.SetActive(false);
+
+        if(disableObject != null)
+        {
+            disableObject.SetActive(false);
+        }
 
         if (showTriggerObject != null)
         {
@@ -263,7 +278,7 @@ public class HiddenAppear : MonoBehaviour
             return false;
         }
 
-        if (Physics.Raycast(fromPosition, direction, out hit))
+        if (Physics.Raycast(fromPosition, direction * 2f, out hit))
         {
             return true;
         }

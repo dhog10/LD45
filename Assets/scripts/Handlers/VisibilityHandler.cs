@@ -50,7 +50,7 @@ public class VisibilityHandler : MonoBehaviour
 
                     if (!hitDictionary.ContainsKey(objectHit.gameObject))
                     {
-                        hitDictionary.Add(objectHit.gameObject, true);
+                        this.AddNodeToVisible(objectHit.gameObject);
                     }
                 }
             }
@@ -59,6 +59,36 @@ public class VisibilityHandler : MonoBehaviour
 
     public bool IsSeen(GameObject obj)
     {
-        return hitDictionary.ContainsKey(obj);
+        if (hitDictionary.ContainsKey(obj))
+        {
+            return true;
+        }
+
+        for (var i = 0; i < obj.transform.childCount; i++)
+        {
+            var child = obj.transform.GetChild(i);
+            if (this.IsSeen(child.gameObject))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void AddNodeToVisible(GameObject node)
+    {
+        if (hitDictionary.ContainsKey(node))
+        {
+            return;
+        }
+
+        hitDictionary.Add(node, true);
+
+        for(var i = 0; i < node.transform.childCount; i++)
+        {
+            var child = node.transform.GetChild(i);
+            this.AddNodeToVisible(child.gameObject);
+        }
     }
 }
