@@ -62,10 +62,11 @@ public class PickedObject : MonoBehaviour
 
             if (objRigidbody.isKinematic == true)
             {
+                Vector3 forceVector = Camera.main.transform.forward;
 
                 objRigidbody.useGravity = true;
                 objRigidbody.isKinematic = false;
-
+                objRigidbody.AddForce(forceVector * 100);
             }
 
             this.transform.parent = null;
