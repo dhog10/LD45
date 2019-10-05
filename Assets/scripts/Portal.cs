@@ -6,10 +6,21 @@ public class Portal : MonoBehaviour
     public Portal destination;
     public GameObject player;
     public Camera portalCamera;
+    public Material renderTarget;
+
+    private MeshRenderer mr;
 
     void Start()
     {
-        
+        if(portalCamera.targetTexture != null)
+        {
+            portalCamera.targetTexture.Release();
+        }
+
+        portalCamera.targetTexture = (RenderTexture)renderTarget.mainTexture ?? new RenderTexture(Screen.width, Screen.height, 24);
+        renderTarget.mainTexture = portalCamera.targetTexture;
+
+        mr = this.GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -30,6 +41,21 @@ public class Portal : MonoBehaviour
                 portalCamera.gameObject.SetActive(false);
             }
         }
+
+        if (this.IsInRoom())
+        {
+            if (!mr.enabled)
+            {
+                mr.enabled = true;
+            }
+        }
+        else
+        {
+            if (mr.enabled)
+            {
+                mr.enabled = false;
+            }
+        }
     }
 
     public bool IsInRoom()
@@ -46,17 +72,18 @@ public class Portal : MonoBehaviour
 
     private void PositionCamera()
     {
-        portalCamera.gameObject.transform.position = this.GetCameraPosition();
-        portalCamera.gameObject.transform.rotation = this.GetCameraAngle();
+        portalCamera.transform.position = this.GetCameraPosition();
+        portalCamera.transform.rotation = this.GetCameraAngle();
 
-        Debug.DrawLine(transform.position, this.GetCameraPosition());
+        Debug.DrawLine(portalCamera.transform.position, portalCamera.transform.position + portalCamera.transform.forward);
     }
 
     private Quaternion GetCameraAngle()
     {
-        var relativeRotation = Quaternion.Inverse(destination.transform.rotation) * player.gameObject.transform.rotation;
-
-        return this.transform.rotation * relativeRotation;
+        var angDiff = Quaternion.Angle(transform.rotation, destination.transform.rotation);
+        var rotDiff = Quaternion.AngleAxis(angDiff, Vector3.up);
+        var direction = -(rotDiff * player.transform.forward);
+        return Quaternion.LookRotation(direction, Vector3.up);
     }
     private Vector3 GetCameraPosition()
     {
