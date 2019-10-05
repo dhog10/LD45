@@ -17,24 +17,29 @@ public class VisibilityHandler : MonoBehaviour
 
     private void Update()
     {
-        if(Time.time - lastCheck < 0.1f)
+        if (Time.time - lastCheck < 0.2f)
         {
             return;
         }
 
+        this.UpdateVisibility();
+    }
+
+    public void UpdateVisibility()
+    {
         lastCheck = Time.time;
 
         hitDictionary.Clear();
 
         var camera = Camera.main;
-        if(camera == null)
+        if (camera == null)
         {
             return;
         }
 
-        for(var x = 0; x < Screen.width; x += 80)
+        for (var x = -100; x < Screen.width + 100; x += 50)
         {
-            for(var y = 0; y < Screen.height; y += 80)
+            for (var y = -100; y < Screen.height + 100; y += 50)
             {
                 RaycastHit hit;
                 var ray = camera.ScreenPointToRay(new Vector3(x, y, 0));

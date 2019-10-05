@@ -122,7 +122,7 @@ public class Portal : MonoBehaviour
 
     public void UpdatePortal()
     {
-        if (destination == null)
+        if (destination == null || !destination.isActiveAndEnabled)
         {
             if (portalCamera.gameObject.activeSelf)
             {
@@ -187,27 +187,21 @@ public class Portal : MonoBehaviour
         portalCamera.transform.position = this.GetCameraPosition();
         portalCamera.transform.rotation = this.GetCameraAngle();
 
-        Debug.DrawLine(portalCamera.transform.position, portalCamera.transform.position + portalCamera.transform.forward);
+        Debug.DrawLine(portalCamera.transform.position, portalCamera.transform.position + portalCamera.transform.forward, Color.green);
     }
 
     private Quaternion GetCameraAngle()
     {
-        var angDiff = Quaternion.Angle(transform.rotation, destination.transform.rotation);
+        var camera = Camera.main;
+        var worldRotation = camera.transform.rotation;
+        var door1 = transform;
+        var door2 = destination.transform;
 
-        if (!inverted)
-        {
-            angDiff = -angDiff;
-        }
+        var C = door1.transform.rotation * Quaternion.Inverse(door2.transform.rotation);
 
-        var rotDiff = Quaternion.AngleAxis(angDiff, Vector3.up);
-        var direction = rotDiff * player.transform.forward;
-
-        direction = -direction;
-        direction.y = -direction.y;
-
-        return Quaternion.LookRotation(direction, Vector3.up);
-
-
+        var rot = (C * worldRotation).eulerAngles;
+        rot = new Vector3(rot.x, rot.y + 180, rot.z);
+        return Quaternion.Euler(rot);
     }
 
     private Vector3 GetCameraPosition()
