@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Frame": {
+        "BasketBall": {
             "shader": "Main shader"
         }
     }
