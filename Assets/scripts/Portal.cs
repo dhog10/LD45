@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class Portal : MonoBehaviour
@@ -9,6 +10,9 @@ public class Portal : MonoBehaviour
     public GameObject player;
     public Camera portalCamera;
     public Material renderTarget;
+
+    public UnityEvent onTeleportFrom;
+    public UnityEvent onTeleportTo;
 
     private PlayerController playerController;
     private GameObject playerObject;
@@ -61,7 +65,7 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (teleporting || destination == null || playerInside || !this.IsInRoom())
+        if (teleporting || destination == null || !destination.isActiveAndEnabled || playerInside || !this.IsInRoom())
         {
             return;
         }
@@ -82,17 +86,10 @@ public class Portal : MonoBehaviour
 
                 destination.NotifyTeleporting();
 
-                var rotDiff = Quaternion.Angle(transform.rotation, destination.transform.rotation);
+                playerObject.transform.rotation = destination.portalCamera.transform.rotation;
+                var euler = destination.portalCamera.transform.rotation.eulerAngles;
 
-                if (inverted)
-                {
-                    rotDiff = -rotDiff;
-                }
-
-                rotDiff += 180f;
-
-                playerObject.transform.Rotate(Vector3.up, rotDiff);
-                playerController.cameraYaw += rotDiff;
+                controller.cameraYaw = euler.y;
 
                 var localPosition = transform.InverseTransformPoint(playerObject.transform.position);
 
@@ -100,6 +97,9 @@ public class Portal : MonoBehaviour
                 localPosition.y = -localPosition.y;
 
                 playerObject.transform.position = destination.transform.TransformPoint(localPosition);
+
+                onTeleportFrom?.Invoke();
+                destination.onTeleportTo?.Invoke();
             }            
         }
     }
