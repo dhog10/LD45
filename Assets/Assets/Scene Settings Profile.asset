@@ -108,10 +108,10 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   multiplier:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 1
@@ -198,11 +198,11 @@ MonoBehaviour:
     min: 0
   fogStart:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 50
     min: 0
   fogEnd:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 55
     min: 0
   fogHeightStart:
     m_OverrideState: 1
