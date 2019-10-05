@@ -117,6 +117,8 @@ public class PlayerController : MonoBehaviour
 
     // Use this for initialization
     void Start () {
+        Cursor.visible = false;
+        Screen.lockCursor = true;
         lastMoveDirection = Vector3.zero;
         lastVisualDirection = Vector3.zero;
         currentSpeed = Vector2.zero;
