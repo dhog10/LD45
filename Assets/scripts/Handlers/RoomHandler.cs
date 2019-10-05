@@ -14,6 +14,7 @@ public class RoomHandler : MonoBehaviour
     void Start()
     {
         hubComponent = hubRoom.GetComponent<Room>();
+        hubComponent.EnterRoom();
 
         this.SpawnRoom(rooms[0]);
     }
