@@ -198,11 +198,11 @@ MonoBehaviour:
     min: 0
   fogStart:
     m_OverrideState: 1
-    m_Value: 15
+    m_Value: 10
     min: 0
   fogEnd:
     m_OverrideState: 1
-    m_Value: 15
+    m_Value: 25
     min: 0
   fogHeightStart:
     m_OverrideState: 1
