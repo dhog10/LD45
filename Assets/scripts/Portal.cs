@@ -1,14 +1,25 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Portal : MonoBehaviour
 {
     public float distance = 50f;
+    public bool inverted = false;
     public Portal destination;
     public GameObject player;
     public Camera portalCamera;
     public Material renderTarget;
 
+    private PlayerController playerController;
+    private GameObject playerObject;
     private MeshRenderer mr;
+    [HideInInspector]
+    public bool playerInside = false;
+
+    private bool teleporting = false;
+    private float lastTeleport = 0f;
+
+    public Transform PortalTransform => mr.transform;
 
     void Start()
     {
@@ -17,14 +28,119 @@ public class Portal : MonoBehaviour
             portalCamera.targetTexture.Release();
         }
 
-        portalCamera.targetTexture = (RenderTexture)renderTarget.mainTexture ?? new RenderTexture(Screen.width, Screen.height, 24);
-        renderTarget.mainTexture = portalCamera.targetTexture;
+        if(portalCamera != null)
+        {
+            portalCamera.targetTexture = (RenderTexture)renderTarget.mainTexture ?? new RenderTexture(Screen.width, Screen.height, 24);
+            renderTarget.mainTexture = portalCamera.targetTexture;
+        }
 
-        mr = this.GetComponent<MeshRenderer>();
+        mr = this.GetComponentInChildren<MeshRenderer>(true);
+
+        if(player == null)
+        {
+            playerController = FindObjectOfType<PlayerController>();
+            
+            if(playerController != null)
+            {
+                playerObject = playerController.gameObject;
+
+                var camera = playerController.gameObject.GetComponentInChildren<Camera>(true);
+                if(camera != null)
+                {
+                    player = camera.gameObject;
+                }
+                
+            }
+        }
     }
 
-    void Update()
+    private void Update()
     {
+        this.UpdatePortal();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (teleporting || destination == null || playerInside || !this.IsInRoom())
+        {
+            return;
+        }
+
+        var hitObject = other.gameObject;
+
+        var controller = hitObject.GetComponent<PlayerController>();
+
+        if (controller != null)
+        {
+            playerInside = true;
+
+            var dot = this.GetPlayerDot();
+            Debug.Log("dot " + dot);
+
+            if (Time.time - lastTeleport > 0.3f && dot > 0f)
+            {
+                lastTeleport = Time.time;
+
+                destination.NotifyTeleporting();
+
+                var rotDiff = Quaternion.Angle(transform.rotation, destination.transform.rotation);
+
+                if (inverted)
+                {
+                    rotDiff = -rotDiff;
+                }
+
+                rotDiff += 180f;
+
+                playerObject.transform.Rotate(Vector3.up, rotDiff);
+                playerController.cameraYaw += rotDiff;
+
+                var localPosition = transform.InverseTransformPoint(playerObject.transform.position);
+
+                if (!inverted)
+                {
+                    localPosition.x = -localPosition.x;
+                    localPosition.y = -localPosition.y;
+                }
+
+                playerObject.transform.position = destination.transform.TransformPoint(localPosition);
+            }            
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        var hitObject = other.gameObject;
+
+        if (hitObject.GetComponent<PlayerController>() != null)
+        {
+            playerInside = false;
+            teleporting = false;
+        }
+    }
+
+    public void NotifyTeleporting()
+    {
+        teleporting = true;
+    }
+
+    public void UpdatePortal()
+    {
+        if (destination == null)
+        {
+            if (portalCamera.gameObject.activeSelf)
+            {
+                portalCamera.gameObject.SetActive(false);
+            }
+
+            if (mr.enabled)
+            {
+                mr.enabled = false;
+            }
+
+            return;
+        }
+
         if (destination.IsInRoom())
         {
             if (!portalCamera.gameObject.activeSelf)
@@ -81,14 +197,37 @@ public class Portal : MonoBehaviour
     private Quaternion GetCameraAngle()
     {
         var angDiff = Quaternion.Angle(transform.rotation, destination.transform.rotation);
+
+        if (!inverted)
+        {
+            angDiff = -angDiff;
+        }
+
         var rotDiff = Quaternion.AngleAxis(angDiff, Vector3.up);
         var direction = rotDiff * player.transform.forward;
+
+        direction = -direction;
+        direction.y = -direction.y;
+
         return Quaternion.LookRotation(direction, Vector3.up);
+
+
     }
+
     private Vector3 GetCameraPosition()
     {
-        var relativePosition = player.transform.position - destination.transform.position;
+        var relativePosition = destination.transform.InverseTransformPoint(player.transform.position);
+        relativePosition.x = -relativePosition.x;
+        relativePosition.y = -relativePosition.y;
 
-        return this.transform.position + relativePosition;
+        return this.transform.TransformPoint(relativePosition);
+    }
+
+    private float GetPlayerDot()
+    {
+        var origin = this.PortalTransform.position;
+
+        var toPlayer = Vector3.Normalize(playerObject.transform.position - origin);
+        return Vector3.Dot(this.PortalTransform.up, toPlayer);
     }
 }
