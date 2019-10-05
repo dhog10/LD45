@@ -77,7 +77,7 @@ public class Portal : MonoBehaviour
             var dot = this.GetPlayerDot();
             Debug.Log("dot " + dot);
 
-            if (Time.time - lastTeleport > 0.3f && dot < 0f)
+            if (Time.time - lastTeleport > 0.3f && dot > 0f)
             {
                 lastTeleport = Time.time;
 
@@ -87,8 +87,10 @@ public class Portal : MonoBehaviour
 
                 if (inverted)
                 {
-                    rotDiff += 180f;
+                    rotDiff = -rotDiff;
                 }
+
+                rotDiff += 180f;
 
                 playerObject.transform.Rotate(Vector3.up, rotDiff);
                 playerController.cameraYaw += rotDiff;
@@ -195,16 +197,21 @@ public class Portal : MonoBehaviour
     private Quaternion GetCameraAngle()
     {
         var angDiff = Quaternion.Angle(transform.rotation, destination.transform.rotation);
-        var rotDiff = Quaternion.AngleAxis(angDiff, Vector3.up);
-        var direction = rotDiff * player.transform.forward;
 
         if (!inverted)
         {
-            direction = -direction;
-            direction.y = -direction.y;
+            angDiff = -angDiff;
         }
 
+        var rotDiff = Quaternion.AngleAxis(angDiff, Vector3.up);
+        var direction = rotDiff * player.transform.forward;
+
+        direction = -direction;
+        direction.y = -direction.y;
+
         return Quaternion.LookRotation(direction, Vector3.up);
+
+
     }
 
     private Vector3 GetCameraPosition()
@@ -218,9 +225,9 @@ public class Portal : MonoBehaviour
 
     private float GetPlayerDot()
     {
-        var origin = destination.transform.position + mr.transform.up * 0.2f;
+        var origin = this.PortalTransform.position;
 
         var toPlayer = Vector3.Normalize(playerObject.transform.position - origin);
-        return Vector3.Dot(transform.up, toPlayer);
+        return Vector3.Dot(this.PortalTransform.up, toPlayer);
     }
 }

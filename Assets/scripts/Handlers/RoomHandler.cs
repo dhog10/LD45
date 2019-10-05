@@ -8,16 +8,24 @@ public class RoomHandler : MonoBehaviour
     public GameObject[] rooms;
 
     private GameObject currentRoom;
+    private Room hubComponent;
 
     // Start is called before the first frame update
     void Start()
     {
-        // this.SpawnRoom(rooms[0]);
+        hubComponent = hubRoom.GetComponent<Room>();
+
+        this.SpawnRoom(rooms[0]);
     }
 
     public void SpawnRoom(GameObject room)
     {
         currentRoom = room;
+
+        var roomComponent = room.GetComponent<Room>();
+        roomComponent.GetPortal().destination = hubComponent.GetPortal();
+        hubComponent.GetPortal().destination = roomComponent.GetPortal();
+
         this.PrepareRooms();
     }
 

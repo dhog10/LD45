@@ -5,14 +5,22 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     private Door door;
+    private Portal portal;
+
     // Start is called before the first frame update
     void Start()
     {
-        door = transform.GetComponentInChildren<Door>();
+        door = transform.GetComponentInChildren<Door>(true);
+        portal = transform.GetComponentInChildren<Portal>(true);
     }
 
     public Door GetDoor()
     {
         return door;
+    }
+
+    public Portal GetPortal()
+    {
+        return portal;
     }
 }

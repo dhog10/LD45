@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268335344836919216}
   m_LocalRotation: {x: 0.000000053385083, y: 0.7071068, z: 0.7071068, w: -0.000000053385083}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 4699284409473675993}
@@ -303,6 +303,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -540
       objectReference: {fileID: 0}
+    - target: {fileID: 1773538999893967351, guid: 2a43ac6ecfed4e045bcb395c6dc6176d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773538999893967351, guid: 2a43ac6ecfed4e045bcb395c6dc6176d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.22000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773538999893967348, guid: 2a43ac6ecfed4e045bcb395c6dc6176d,
+        type: 3}
+      propertyPath: distance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1773538999893967353, guid: 2a43ac6ecfed4e045bcb395c6dc6176d,
         type: 3}
       propertyPath: m_Enabled
@@ -317,11 +332,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Convex
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773538999893967348, guid: 2a43ac6ecfed4e045bcb395c6dc6176d,
-        type: 3}
-      propertyPath: distance
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a43ac6ecfed4e045bcb395c6dc6176d, type: 3}
