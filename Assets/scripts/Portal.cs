@@ -75,7 +75,6 @@ public class Portal : MonoBehaviour
             playerInside = true;
 
             var dot = this.GetPlayerDot();
-            Debug.Log("dot " + dot);
 
             if (Time.time - lastTeleport > 0.3f && dot > 0f)
             {

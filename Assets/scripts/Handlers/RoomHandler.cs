@@ -23,6 +23,7 @@ public class RoomHandler : MonoBehaviour
         currentRoom = room;
 
         var roomComponent = room.GetComponent<Room>();
+
         roomComponent.GetPortal().destination = hubComponent.GetPortal();
         hubComponent.GetPortal().destination = roomComponent.GetPortal();
 
