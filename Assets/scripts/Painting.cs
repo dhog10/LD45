@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Painting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody rb;
+
+    private void Start()
     {
-        
+        rb = transform.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Fall()
     {
-        
+        rb.AddForce(new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f)) * 10f);
+
+        rb.isKinematic = false;
+        rb.useGravity = true;
     }
 }

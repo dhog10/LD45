@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class HiddenAppear : MonoBehaviour
 {
+    [Tooltip("The visibility collider used when hidden.")]
     public GameObject hideTriggerObject;
+    [Tooltip("The visibility collider used when visible.")]
+    public GameObject showTriggerObject;
     public GameObject disableObject;
     public GameObject enableObject;
 
@@ -22,6 +25,7 @@ public class HiddenAppear : MonoBehaviour
     private float lastSeen = 0f;
     private float lastHidden = 0f;
     private bool wasSeen = false;
+    private bool hiderEnabled = true;
 
     private float hideTime = 0f;
     private float showTime = 0f;
@@ -41,10 +45,13 @@ public class HiddenAppear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hiderEnabled)
+        {
+            return;
+        }
+
         if (this.IsSeen())
         {
-            Debug.Log("seen");
-
             if (!hidden)
             {
                 lastSeen = Time.time;
@@ -54,8 +61,6 @@ public class HiddenAppear : MonoBehaviour
         }
         else
         {
-            Debug.Log("hidden");
-
             if (hidden)
             {
                 lastHidden = Time.time;
@@ -85,6 +90,11 @@ public class HiddenAppear : MonoBehaviour
     {
         disableObject.SetActive(true);
 
+        if(showTriggerObject != null)
+        {
+            hideTriggerObject.SetActive(false);
+        }
+
         hidden = false;
         this.GenerateTimes();
     }
@@ -92,6 +102,11 @@ public class HiddenAppear : MonoBehaviour
     public void Hide()
     {
         disableObject.SetActive(false);
+
+        if (showTriggerObject != null)
+        {
+            hideTriggerObject.SetActive(true);
+        }
 
         hidden = true;
         this.GenerateTimes();
@@ -111,7 +126,27 @@ public class HiddenAppear : MonoBehaviour
             return false;
         }
 
-        return VisibilityHandler.Instance.IsSeen(hideTriggerObject);
+        if (hideTriggerObject != null && VisibilityHandler.Instance.IsSeen(hideTriggerObject))
+        {
+            return true;
+        }
+
+        if (showTriggerObject != null && VisibilityHandler.Instance.IsSeen(showTriggerObject))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void Enable()
+    {
+        hiderEnabled = true;
+    }
+
+    public void Disable()
+    {
+        hiderEnabled = false;
     }
 
     private void GenerateTimes()

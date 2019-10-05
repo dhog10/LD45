@@ -41,12 +41,7 @@ public class VisibilityHandler : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if (!hit.collider.isTrigger)
-                    {
-                        continue;
-                    }
-
-                    var objectHit = hit.transform;
+                    var objectHit = hit.collider;
 
                     if (!hitDictionary.ContainsKey(objectHit.gameObject))
                     {

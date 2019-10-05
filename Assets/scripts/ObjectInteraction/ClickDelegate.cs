@@ -34,6 +34,10 @@ public class ClickDelegate : MonoBehaviour
 
     void Update()
     {
+        if(Camera.main == null)
+        {
+            return;
+        }
 
         var raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
