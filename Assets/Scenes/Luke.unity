@@ -5312,12 +5312,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4997362276184500059}
   piano: {fileID: 6922316292591269290}
+  failAudio: {fileID: 6922316292591269292}
+  successAudio: {fileID: 6922316292591269291}
   activationDistance: 3
   introDelay: 0.1
   sequencesDelay: 3
+  resultAudioDelay: 1
+  maxResponseTime: 5
   pianoSequences:
   - keyPresses:
     - key: {fileID: 2741630530142537656}
+      delay: 1
+  - keyPresses:
+    - key: {fileID: 2741630530142537656}
+      delay: 0.5
+    - key: {fileID: 5712000881696337935}
+      delay: 1
+  - keyPresses:
+    - key: {fileID: 2741630530142537656}
+      delay: 0.5
+    - key: {fileID: 5712000881696337935}
+      delay: 0.5
+    - key: {fileID: 7670718766996485240}
+      delay: 0.5
+    - key: {fileID: 8587635993477453115}
+      delay: 1
+  - keyPresses:
+    - key: {fileID: 2741630530142537656}
+      delay: 0.5
+    - key: {fileID: 5712000881696337935}
+      delay: 0.5
+    - key: {fileID: 7670718766996485240}
+      delay: 0.5
+    - key: {fileID: 8587635993477453115}
+      delay: 0.5
+    - key: {fileID: 9020849416186474868}
+      delay: 0.5
+    - key: {fileID: 9020849416186474868}
       delay: 1
   - keyPresses:
     - key: {fileID: 2741630530142537656}
@@ -5402,7 +5433,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 654d20b1cf51eb04a8a182f39294d3dc, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5498,7 +5529,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 717d8bda318e99e4cb332536c3acaef9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

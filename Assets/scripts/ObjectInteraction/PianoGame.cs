@@ -1,14 +1,19 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class PianoGame : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private Piano piano;
+    [SerializeField] private AudioSource failAudio;
+    [SerializeField] private AudioSource successAudio;
     [Space(5)]
     [SerializeField] private float activationDistance = 5.0f;
     [SerializeField] private float introDelay = 0.25f;
     [SerializeField] private float sequencesDelay = 1.0f;
+    [SerializeField] private float resultAudioDelay = 1.0f;
+    [SerializeField] private float maxResponseTime = 5.0f;
     [Space(5)]
     [SerializeField] private PianoSequence[] pianoSequences;
     private bool activated = false;
@@ -64,7 +69,7 @@ public class PianoGame : MonoBehaviour
     {
         piano.playable = false;
 
-        foreach (var key in piano.keys)
+        foreach (var key in piano.keys.Reverse())
         {
             StartCoroutine(piano.KeyPress(key));
 
@@ -79,6 +84,8 @@ public class PianoGame : MonoBehaviour
     {
         outroTriggered = true;
         piano.playable = false;
+
+        yield return new WaitForSeconds(sequencesDelay);
 
         foreach (var key in piano.keys)
         {
@@ -113,6 +120,7 @@ public class PianoGame : MonoBehaviour
         sequenceInputting = true;
         var currentKeyPress = 0;
 
+        var timeRemaining = maxResponseTime;
         while (sequenceInputting)
         {
             if (pressedKey)
@@ -123,17 +131,29 @@ public class PianoGame : MonoBehaviour
                     currentKeyPress++;
                     if (currentKeyPress >= pianoSequence.keyPresses.Length)
                     {
+                        yield return new WaitForSeconds(resultAudioDelay);
+                        successAudio.Play();
                         currentPianoSequence++;
                         sequenceInputting = false;
                     }
                 }
                 else
                 {
+                    yield return new WaitForSeconds(resultAudioDelay);
+                    failAudio.Play();
                     sequenceInputting = false;
                 }
             }
 
+            timeRemaining -= Time.deltaTime;
+            
             yield return new WaitForEndOfFrame();
+
+            if (timeRemaining <= 0.0f)
+            {
+                failAudio.Play();
+                sequenceInputting = false;
+            }
         }
     }
 }
