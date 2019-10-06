@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "BasketBall": {
+        "Planks": {
             "shader": "Main shader"
         }
     }
