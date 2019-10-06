@@ -315,7 +315,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6940873838263697070
+--- !u!64 &2043325961689104024
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,9 +326,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 2619086233303812490, guid: 1045b3a7952a72a4d9f1341636e3b778, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1045b3a7952a72a4d9f1341636e3b778, type: 3}
 --- !u!1 &5641534327923300485
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
         m_CallState: 2
   room: {fileID: 0}
   startEnabled: 0
---- !u!64 &5641534328454080079
+--- !u!64 &2321859736354745071
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -431,7 +431,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 6274059880062070182, guid: 1045b3a7952a72a4d9f1341636e3b778, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 1045b3a7952a72a4d9f1341636e3b778, type: 3}
 --- !u!1001 &6636147621671511809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -439,11 +439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5641534327923300486}
     m_Modifications:
-    - target: {fileID: 1320280982097165158, guid: ee0805514385c424c9dc54773c3dbc00,
-        type: 3}
-      propertyPath: m_Name
-      value: Door Portal
-      objectReference: {fileID: 0}
     - target: {fileID: 1320280980675545739, guid: ee0805514385c424c9dc54773c3dbc00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -498,6 +493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320280982097165158, guid: ee0805514385c424c9dc54773c3dbc00,
+        type: 3}
+      propertyPath: m_Name
+      value: Door Portal
       objectReference: {fileID: 0}
     - target: {fileID: 1320280982097165161, guid: ee0805514385c424c9dc54773c3dbc00,
         type: 3}
@@ -569,6 +569,16 @@ PrefabInstance:
       propertyPath: onTeleportTo.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1320280981623914928, guid: ee0805514385c424c9dc54773c3dbc00,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: 1045b3a7952a72a4d9f1341636e3b778, type: 3}
+    - target: {fileID: 1320280982170060810, guid: ee0805514385c424c9dc54773c3dbc00,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 1045b3a7952a72a4d9f1341636e3b778, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0805514385c424c9dc54773c3dbc00, type: 3}
 --- !u!1 &5641534328917875815 stripped

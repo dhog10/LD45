@@ -7,6 +7,7 @@ public class RoomHandler : MonoBehaviour
     public static RoomHandler Instance;
 
     public GameObject hubRoom;
+    public GameObject propsObject;
     public GameObject[] rooms;
 
     private GameObject currentRoom;
@@ -24,6 +25,15 @@ public class RoomHandler : MonoBehaviour
         hubComponent.EnterRoom();
 
         this.SpawnRoom(rooms[roomIndex]);
+
+        if(propsObject != null)
+        {
+            for(var i = 0; i < propsObject.transform.childCount; i++)
+            {
+                var child = propsObject.transform.GetChild(i);
+                child.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void IncrementRoom()

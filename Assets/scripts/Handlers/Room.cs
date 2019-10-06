@@ -12,6 +12,7 @@ public class Room : MonoBehaviour
     public float musicVolume = 1f;
     public float musicFadeMultiplier = 1f;
     public bool doorStartOpen = false;
+    public GameObject[] completionObjects;
 
     private Door door;
     private Portal portal;
@@ -159,6 +160,14 @@ public class Room : MonoBehaviour
 
         complete = true;
         RoomHandler.Instance.IncrementRoom();
+
+        if(completionObjects != null)
+        {
+            foreach(var obj in completionObjects)
+            {
+                obj.SetActive(true);
+            }
+        }
     }
 
     public bool IsComplete()
