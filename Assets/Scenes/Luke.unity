@@ -5316,9 +5316,9 @@ MonoBehaviour:
   successAudio: {fileID: 6922316292591269291}
   activationDistance: 3
   introDelay: 0.1
-  sequencesDelay: 3
+  sequencesDelay: 2
   resultAudioDelay: 1
-  maxResponseTime: 5
+  perKeyResponseTime: 2
   pianoSequences:
   - keyPresses:
     - key: {fileID: 2741630530142537656}
