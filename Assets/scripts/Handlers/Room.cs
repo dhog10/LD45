@@ -11,8 +11,10 @@ public class Room : MonoBehaviour
     public float roomSize = 40f;
     public float musicVolume = 1f;
     public float musicFadeMultiplier = 1f;
+    public float ambientVolume = 1f;
     public bool doorStartOpen = false;
     public string completeText = "";
+    public AudioSource ambientSound;
     public GameObject[] completionObjects;
 
     private Door door;
@@ -23,10 +25,10 @@ public class Room : MonoBehaviour
     private float fogEnd = 0f;
     private float fogStart = 0f;
     private bool complete = false;
-    private float currentMusicAudio = 0f;
+    private float currentMusicVolume = 0f;
 
     private AudioSource musicAudio;
-
+    
     public AudioSource MusicAudio => musicAudio;
 
     // Start is called before the first frame update
@@ -35,7 +37,12 @@ public class Room : MonoBehaviour
         musicAudio = GetComponent<AudioSource>();
         if (musicAudio != null)
         {
-            musicAudio.volume = currentMusicAudio;
+            musicAudio.volume = currentMusicVolume;
+        }
+
+        if(ambientSound != null)
+        {
+            ambientSound.volume = currentMusicVolume;
         }
 
         door = transform.GetComponentInChildren<Door>(true);
@@ -114,22 +121,32 @@ public class Room : MonoBehaviour
                 }
             }
 
-            currentMusicAudio = Mathf.Min(1f, currentMusicAudio + musicFadeMultiplier * Time.deltaTime);
+            currentMusicVolume = Mathf.Min(1f, currentMusicVolume + musicFadeMultiplier * Time.deltaTime);
         }
         else
         {
-            currentMusicAudio = Mathf.Max(0f, currentMusicAudio - musicFadeMultiplier * Time.deltaTime);
+            currentMusicVolume = Mathf.Max(0f, currentMusicVolume - musicFadeMultiplier * Time.deltaTime);
         }
 
         if(musicAudio != null)
         {
-            musicAudio.volume = currentMusicAudio * musicVolume;
+            musicAudio.volume = currentMusicVolume * musicVolume;
 
-            if(currentMusicAudio > 0f)
+            if(ambientSound != null)
+            {
+                ambientSound.volume = currentMusicVolume * ambientVolume;
+            }
+
+            if(currentMusicVolume > 0f)
             {
                 if (!musicAudio.isPlaying)
                 {
                     musicAudio.Play();
+                }
+
+                if (ambientSound != null && !ambientSound.isPlaying)
+                {
+                    ambientSound.Play();
                 }
             }
             else
@@ -137,6 +154,11 @@ public class Room : MonoBehaviour
                 if (musicAudio.isPlaying)
                 {
                     musicAudio.Stop();
+                }
+
+                if (ambientSound != null && ambientSound.isPlaying)
+                {
+                    ambientSound.Stop();
                 }
             }
         }
