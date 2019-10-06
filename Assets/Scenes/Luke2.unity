@@ -1023,7 +1023,7 @@ MonoBehaviour:
     type: 3}
   splashPrefab: {fileID: 818471748714628559, guid: 1f6f9ece543b60e4c837d7c8f47986a4,
     type: 3}
-  fishPrefab: {fileID: 5707567222343510463, guid: 9e6eca471e38fb243a6a26f67e477cf6,
+  fishPrefab: {fileID: 5604897214197926879, guid: 67c53ac5362a23849bbaa72bd0e90d34,
     type: 3}
   targetPrefab: {fileID: 299566372761463912, guid: e69505db8a72d6146b91096f35018b08,
     type: 3}
@@ -1148,7 +1148,7 @@ Camera:
   m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -3913,7 +3913,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 5031003578569901297, guid: 1e8fc92fcc71b9a4d9c6412ae26948c0, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1e8fc92fcc71b9a4d9c6412ae26948c0, type: 3}
 --- !u!23 &6286575234382148873
 MeshRenderer:
   m_ObjectHideFlags: 0
