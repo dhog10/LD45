@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
     private float currentArmRecoil = 0;
     private bool recoilUp = false;
     private GameObject ui3D2D;
+    private Vector3 currentCameraPosition;
 
     private void Awake()
     {
@@ -240,7 +241,19 @@ public class PlayerController : MonoBehaviour
 
             currentCameraDistance += (((aimingWeapon ? cameraDistanceAim : cameraDistance)) - currentCameraDistance) * Time.deltaTime * cameraAdjustSpeed;
             var newPosition = transform.position - (playerCamera.transform.forward * currentCameraDistance) + offsetPos;
-            playerCamera.gameObject.transform.position = newPosition;
+
+            var distance = Vector3.Distance(currentCameraPosition, newPosition);
+
+            if(distance > 1f)
+            {
+                currentCameraPosition = newPosition;
+            }
+            else
+            {
+                currentCameraPosition = currentCameraPosition + (newPosition - currentCameraPosition) * Time.deltaTime * 2f;
+            }
+
+            playerCamera.gameObject.transform.position = currentCameraPosition;
 
             RaycastHit hit;
             if (Physics.Raycast(transform.position, (newPosition - transform.position).normalized, out hit, currentCameraDistance, ~0))
@@ -264,7 +277,21 @@ public class PlayerController : MonoBehaviour
             currentCameraOffset = Vector3.zero;
             var direction = fpsCameraPosition.transform.forward;
             direction.y = 0f;
-            playerCamera.gameObject.transform.position = transform.position + new Vector3(0f, currentCameraHeight, 0f) + direction * 0.15f;
+
+            var newPosition = transform.position + new Vector3(0f, currentCameraHeight, 0f) + direction * 0.15f;
+
+            var distance = Vector3.Distance(currentCameraPosition, newPosition);
+
+            if (distance > 1f)
+            {
+                currentCameraPosition = newPosition;
+            }
+            else
+            {
+                currentCameraPosition = currentCameraPosition + (newPosition - currentCameraPosition) * Time.deltaTime * 5f;
+            }
+
+            playerCamera.gameObject.transform.position = currentCameraPosition;
         }
 
         // Toggle camera mode
