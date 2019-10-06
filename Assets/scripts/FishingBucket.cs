@@ -10,6 +10,12 @@ public class FishingBucket : MonoBehaviour
 
     private int score = 0;
     private Dictionary<Fish, bool> doneFish = new Dictionary<Fish, bool>();
+    private AudioSource[] audios;
+
+    private void Start()
+    {
+        audios = GetComponents<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +29,11 @@ public class FishingBucket : MonoBehaviour
             }
 
             doneFish.Add(fish, true);
+
+            if(audios.Length > score)
+            {
+                audios[score].Play();
+            }
 
             score++;
 
