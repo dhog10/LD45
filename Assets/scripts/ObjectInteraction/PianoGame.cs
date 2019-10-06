@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PianoGame : MonoBehaviour
 {
+    public UnityEvent onComplete;
+
     [SerializeField] private Transform player;
     [SerializeField] private Piano piano;
     [SerializeField] private AudioSource failAudio;
@@ -43,6 +46,7 @@ public class PianoGame : MonoBehaviour
         if (currentPianoSequence >= pianoSequences.Length)
         {
             StartCoroutine(this.Outro());
+            onComplete?.Invoke();
             return;
         }
 
