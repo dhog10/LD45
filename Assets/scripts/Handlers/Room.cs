@@ -158,6 +158,8 @@ public class Room : MonoBehaviour
             return;
         }
 
+        Debug.Log("Complete room " + gameObject.name);
+
         complete = true;
         RoomHandler.Instance.IncrementRoom();
 
