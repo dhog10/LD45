@@ -19,6 +19,8 @@ public class Portal : MonoBehaviour
     private MeshRenderer mr;
     [HideInInspector]
     public bool playerInside = false;
+    [HideInInspector]
+    public Door door;
 
     private bool teleporting = false;
     private float lastTeleport = 0f;

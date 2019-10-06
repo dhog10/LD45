@@ -18,6 +18,11 @@ public class Door : MonoBehaviour
     {
         portal = GetComponentInChildren<Portal>();
 
+        if (portal)
+        {
+            portal.door = this;
+        }
+
         if (!open)
         {
             this.Close();
@@ -58,6 +63,11 @@ public class Door : MonoBehaviour
         if (portal)
         {
             portal.EnablePortal();
+
+            if(portal.destination.door != null && !portal.destination.door.IsOpen())
+            {
+                portal.destination.door.Open();
+            }
         }
     }
 

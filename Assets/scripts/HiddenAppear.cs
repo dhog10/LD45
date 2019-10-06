@@ -67,13 +67,16 @@ public class HiddenAppear : MonoBehaviour
             ang = transform.rotation,
         });
 
-        foreach(var spawn in spawnPositions)
+        if (spawnPositions != null)
         {
-            spawns.Add(new SpawnPosition()
+            foreach (var spawn in spawnPositions)
             {
-                pos = spawn.transform.position,
-                ang = spawn.transform.rotation,
-            });
+                spawns.Add(new SpawnPosition()
+                {
+                    pos = spawn.transform.position,
+                    ang = spawn.transform.rotation,
+                });
+            }
         }
 
         wasSeen = !startHidden;
