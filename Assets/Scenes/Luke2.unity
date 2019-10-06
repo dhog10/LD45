@@ -1019,7 +1019,7 @@ MonoBehaviour:
   waterTag: Water
   rodTip: {fileID: 1698541885}
   line: {fileID: 2062565647}
-  bobberPrefab: {fileID: 827431369696386092, guid: eadc63cb641eb0849941b9b4933485c7,
+  bobberPrefab: {fileID: 5555949690207949585, guid: eadc63cb641eb0849941b9b4933485c7,
     type: 3}
   splashPrefab: {fileID: 818471748714628559, guid: 1f6f9ece543b60e4c837d7c8f47986a4,
     type: 3}
