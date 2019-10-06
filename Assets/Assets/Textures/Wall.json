@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Book": {
+        "Wall": {
             "shader": "Main shader"
         }
     }

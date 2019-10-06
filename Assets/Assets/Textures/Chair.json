@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Book": {
+        "Chair": {
             "shader": "Main shader"
         }
     }

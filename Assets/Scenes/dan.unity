@@ -22909,6 +22909,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Painting
       objectReference: {fileID: 0}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: spawnPositions.Array.data[0]
+      value: 
+      objectReference: {fileID: 334174816}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: spawnPositions.Array.data[1]
+      value: 
+      objectReference: {fileID: 1983966811}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: spawnPositions.Array.data[2]
+      value: 
+      objectReference: {fileID: 2030073220}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: spawnPositions.Array.data[3]
+      value: 
+      objectReference: {fileID: 344120210}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: spawnPositions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1782627784}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: spawnPositions.Array.data[5]
+      value: 
+      objectReference: {fileID: 143811944}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: spawnPositions.Array.data[6]
+      value: 
+      objectReference: {fileID: 18758058}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: spawnPositions.Array.data[7]
+      value: 
+      objectReference: {fileID: 1142587627}
+    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 315831156}
     - target: {fileID: 3716910648867096147, guid: f34b762d0efc83640801dd081c7b0218,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22964,51 +23009,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: spawnPositions.Array.data[0]
-      value: 
-      objectReference: {fileID: 334174816}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: spawnPositions.Array.data[1]
-      value: 
-      objectReference: {fileID: 1983966811}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: spawnPositions.Array.data[2]
-      value: 
-      objectReference: {fileID: 2030073220}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: spawnPositions.Array.data[3]
-      value: 
-      objectReference: {fileID: 344120210}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: spawnPositions.Array.data[4]
-      value: 
-      objectReference: {fileID: 1782627784}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: spawnPositions.Array.data[5]
-      value: 
-      objectReference: {fileID: 143811944}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: spawnPositions.Array.data[6]
-      value: 
-      objectReference: {fileID: 18758058}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: spawnPositions.Array.data[7]
-      value: 
-      objectReference: {fileID: 1142587627}
-    - target: {fileID: 3716910648867096144, guid: f34b762d0efc83640801dd081c7b0218,
-        type: 3}
-      propertyPath: room
-      value: 
-      objectReference: {fileID: 315831156}
     - target: {fileID: 3716910647926170218, guid: f34b762d0efc83640801dd081c7b0218,
         type: 3}
       propertyPath: onDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Target

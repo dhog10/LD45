@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Book": {
+        "Cactus": {
             "shader": "Main shader"
         }
     }
