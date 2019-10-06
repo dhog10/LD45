@@ -1,8 +1,85 @@
 fileFormatVersion: 2
 guid: 4adba86421f0aff40a6b0d923040675a
 ModelImporter:
-  serializedVersion: 26
-  internalIDToNameTable: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Piano
+    100002: Piano_Key1
+    100004: Piano_Key10
+    100006: Piano_Key11
+    100008: Piano_Key12
+    100010: Piano_Key13
+    100012: Piano_Key14
+    100014: Piano_Key2
+    100016: Piano_Key3
+    100018: Piano_Key4
+    100020: Piano_Key5
+    100022: Piano_Key6
+    100024: Piano_Key7
+    100026: Piano_Key8
+    100028: Piano_Key9
+    100030: //RootNode
+    400000: Piano
+    400002: Piano_Key1
+    400004: Piano_Key10
+    400006: Piano_Key11
+    400008: Piano_Key12
+    400010: Piano_Key13
+    400012: Piano_Key14
+    400014: Piano_Key2
+    400016: Piano_Key3
+    400018: Piano_Key4
+    400020: Piano_Key5
+    400022: Piano_Key6
+    400024: Piano_Key7
+    400026: Piano_Key8
+    400028: Piano_Key9
+    400030: //RootNode
+    2300000: Piano
+    2300002: Piano_Key1
+    2300004: Piano_Key10
+    2300006: Piano_Key11
+    2300008: Piano_Key12
+    2300010: Piano_Key13
+    2300012: Piano_Key14
+    2300014: Piano_Key2
+    2300016: Piano_Key3
+    2300018: Piano_Key4
+    2300020: Piano_Key5
+    2300022: Piano_Key6
+    2300024: Piano_Key7
+    2300026: Piano_Key8
+    2300028: Piano_Key9
+    3300000: Piano
+    3300002: Piano_Key1
+    3300004: Piano_Key10
+    3300006: Piano_Key11
+    3300008: Piano_Key12
+    3300010: Piano_Key13
+    3300012: Piano_Key14
+    3300014: Piano_Key2
+    3300016: Piano_Key3
+    3300018: Piano_Key4
+    3300020: Piano_Key5
+    3300022: Piano_Key6
+    3300024: Piano_Key7
+    3300026: Piano_Key8
+    3300028: Piano_Key9
+    4300000: Piano
+    4300002: Piano_Key1
+    4300004: Piano_Key2
+    4300006: Piano_Key3
+    4300008: Piano_Key4
+    4300010: Piano_Key5
+    4300012: Piano_Key6
+    4300014: Piano_Key7
+    4300016: Piano_Key8
+    4300018: Piano_Key9
+    4300020: Piano_Key10
+    4300022: Piano_Key11
+    4300024: Piano_Key12
+    4300026: Piano_Key13
+    4300028: Piano_Key14
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -48,7 +125,6 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -56,19 +132,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -77,11 +152,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -91,7 +165,6 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
