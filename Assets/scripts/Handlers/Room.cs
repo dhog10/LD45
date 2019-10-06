@@ -11,7 +11,7 @@ public class Room : MonoBehaviour
     public float roomSize = 40f;
     public float musicVolume = 1f;
     public float musicFadeMultiplier = 1f;
-    public bool doorStartOpen = true;
+    public bool doorStartOpen = false;
 
     private Door door;
     private Portal portal;

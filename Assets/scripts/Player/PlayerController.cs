@@ -188,6 +188,11 @@ public class PlayerController : MonoBehaviour
         HandleInput();
         HandleFootsteps();
 
+        if (mainCamera && mainCamera.gameObject.activeSelf && mainCamera != playerCamera)
+        {
+            mainCamera.gameObject.SetActive(false);
+        }
+
         if (!playerCamera.gameObject.activeSelf)
         {
             playerCamera.gameObject.SetActive(true);
@@ -196,11 +201,6 @@ public class PlayerController : MonoBehaviour
         if (infoText && infoText.gameObject.activeSelf)
         {
             infoText.gameObject.SetActive(false);
-        }
-
-        if (mainCamera && mainCamera.gameObject.activeSelf)
-        {
-            mainCamera.gameObject.SetActive(false);
         }
 
         var mouseX = Input.GetAxis("Mouse X");
