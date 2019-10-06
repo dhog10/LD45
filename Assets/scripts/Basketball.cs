@@ -22,6 +22,10 @@ public class Basketball : MonoBehaviour
 
     void Update()
     {
+        if(playerPosition == null)
+        {
+            return;
+        }
 
         distance = Vector3.Distance(gameObject.transform.position, playerPosition.position);
 
