@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Book": {
+        "Rug": {
             "shader": "Main shader"
         }
     }

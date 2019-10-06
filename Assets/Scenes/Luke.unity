@@ -5316,9 +5316,9 @@ MonoBehaviour:
   successAudio: {fileID: 6922316292591269291}
   activationDistance: 3
   introDelay: 0.1
-  sequencesDelay: 3
+  sequencesDelay: 2
   resultAudioDelay: 1
-  maxResponseTime: 5
+  perKeyResponseTime: 2
   pianoSequences:
   - keyPresses:
     - key: {fileID: 2741630530142537656}
@@ -5346,14 +5346,26 @@ MonoBehaviour:
       delay: 0.5
     - key: {fileID: 8587635993477453115}
       delay: 0.5
-    - key: {fileID: 9020849416186474868}
+    - key: {fileID: 5712000881696337935}
       delay: 0.5
-    - key: {fileID: 9020849416186474868}
+    - key: {fileID: 1185004470842604221}
       delay: 1
   - keyPresses:
     - key: {fileID: 2741630530142537656}
       delay: 0.5
-    - key: {fileID: 9020849416186474868}
+    - key: {fileID: 5712000881696337935}
+      delay: 0.5
+    - key: {fileID: 7670718766996485240}
+      delay: 0.5
+    - key: {fileID: 8587635993477453115}
+      delay: 0.5
+    - key: {fileID: 5712000881696337935}
+      delay: 0.5
+    - key: {fileID: 1185004470842604221}
+      delay: 0.5
+    - key: {fileID: 1205096611932054662}
+      delay: 0.5
+    - key: {fileID: 1547769698444190911}
       delay: 1
 --- !u!114 &6922316292591269290
 MonoBehaviour:
