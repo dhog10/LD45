@@ -6237,7 +6237,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 156, guid: e95d62a489b4df44ca0999c365ec523f, type: 3}
       propertyPath: m_Name
-      value: SimorCharacterController
+      value: SimonCharacterController
       objectReference: {fileID: 0}
     - target: {fileID: 400, guid: e95d62a489b4df44ca0999c365ec523f, type: 3}
       propertyPath: m_LocalPosition.x
