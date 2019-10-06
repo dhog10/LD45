@@ -434,7 +434,8 @@ public class PlayerController : MonoBehaviour
 
                 if (torsoObject)
                 {
-                    torsoObject.transform.rotation = Quaternion.Euler(0, currentLookingYaw - (angleDifference * 0.5f), 0);
+                    var euler = torsoObject.transform.rotation.eulerAngles;
+                    torsoObject.transform.rotation = Quaternion.Euler(euler.x, currentLookingYaw - (angleDifference * 0.5f), euler.z);
                 }
 
                 if (headObject)

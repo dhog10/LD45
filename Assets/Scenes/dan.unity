@@ -6341,6 +6341,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9120818617741152662, guid: e95d62a489b4df44ca0999c365ec523f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 922565a0bd8da7d4381dbc151e3cd335, type: 2}
+    - target: {fileID: 190787139749567524, guid: e95d62a489b4df44ca0999c365ec523f,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 7c5ba4ddfb9e2ad48abc4629fda7080e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95d62a489b4df44ca0999c365ec523f, type: 3}
 --- !u!1 &388541446

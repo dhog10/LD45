@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c427c05d792f0f4c928b15fe319d11a
+guid: ee184a8afb9cfe148bb18da9e20937ef
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -137,9 +137,10 @@ ModelImporter:
     400128: mixamorig:Spine2
     400130: polySurface1
     400132: //RootNode
-    2100000: No Name
+    2100000: 01 - Default
     4300000: polySurface1
-    7400000: mixamo.com
+    7400000: Take 001
+    7400002: mixamo.com
     9500000: //RootNode
     13700000: polySurface1
     2186277476908879412: ImportLogs
@@ -156,7 +157,14 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
+      : position error = 106.280815 mm\n\t'mixamorig:LeftLeg' : position error = 403.866119
+      mm\n\t'mixamorig:LeftFoot' : position error = 419.685974 mm\n\t'mixamorig:LeftToeBase'
+      : position error = 161.689957 mm\n\t'mixamorig:RightUpLeg' : position error
+      = 106.280815 mm\n\t'mixamorig:RightLeg' : position error = 403.868835 mm\n\t'mixamorig:RightFoot'
+      : position error = 419.672150 mm\n\t'mixamorig:RightToeBase' : position error
+      = 161.733978 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -195,7 +203,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.0254
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
@@ -206,7 +214,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 2
     human: []
@@ -222,8 +230,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 726fc6cf309cf7942adb58674c657bf7,
-    type: 2}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
