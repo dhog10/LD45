@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Book": {
+        "Table": {
             "shader": "Main shader"
         }
     }

@@ -18,6 +18,8 @@ MonoBehaviour:
   - {fileID: 114163961712857554}
   - {fileID: 114009729467682712}
   - {fileID: 114588363195065474}
+  - {fileID: 114927381391977576}
+  - {fileID: 114795478998347676}
 --- !u!114 &114009729467682712
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -176,7 +178,7 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 15
+    value: 20
   brightness:
     overrideState: 1
     value: 0
@@ -185,7 +187,7 @@ MonoBehaviour:
     value: 0.75
   contrast:
     overrideState: 1
-    value: 15
+    value: 25
   mixerRedOutRedIn:
     overrideState: 1
     value: 100
@@ -215,10 +217,10 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.9503474, y: 0.9560325, z: 1, w: -0.0740193}
+    value: {x: 1, y: 1, z: 1, w: -0.07401924}
   gamma:
     overrideState: 1
-    value: {x: 0.9568406, y: 0.9766427, z: 1, w: -0.0296077}
+    value: {x: 1, y: 1, z: 1, w: 0.10362695}
   gain:
     overrideState: 1
     value: {x: 0.9801389, y: 1, z: 0.99999994, w: 0.044411555}
@@ -1481,7 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -1491,7 +1493,57 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0
+    value: 0.019
   fastMode:
     overrideState: 1
     value: 0
+--- !u!114 &114795478998347676
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  shutterAngle:
+    overrideState: 0
+    value: 270
+  sampleCount:
+    overrideState: 0
+    value: 10
+--- !u!114 &114927381391977576
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
+  m_Name: Grain
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  colored:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 0.023
+  size:
+    overrideState: 1
+    value: 1
+  lumContrib:
+    overrideState: 1
+    value: 0.8
