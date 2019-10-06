@@ -11,9 +11,12 @@ public class Basketball : MonoBehaviour
 
     public AudioSource tickSource;
 
+    private Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         tickSource = GetComponent<AudioSource>();
     }
 
@@ -21,11 +24,13 @@ public class Basketball : MonoBehaviour
     {
 
         distance = Vector3.Distance(gameObject.transform.position, playerPosition.position);
-        if (distance > distanceMax)
-        {
-            gameObject.transform.position = new Vector3((playerPosition.position.x + 1),1,(playerPosition.position.z + 1));
-        }
 
+        var p = distance / distanceMax;
+        p = Mathf.Clamp((p - 0.5f) / 0.5f, 0f, 1f);
+
+        Debug.Log(p);
+
+        rb.AddForce((playerPosition.position - transform.position) * p * 10f * Time.deltaTime);
     }
     void OnCollisionEnter (Collision collision)
     {

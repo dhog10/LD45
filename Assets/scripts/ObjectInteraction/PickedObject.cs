@@ -23,7 +23,7 @@ public class PickedObject : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             DropClick();
         }

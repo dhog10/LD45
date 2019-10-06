@@ -46,7 +46,7 @@ public class ClickDelegate : MonoBehaviour
         if (Physics.Raycast(raycast, out rayHit, pickUpRange))
         {
 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (pickUpObject.childCount == 0)
                 {

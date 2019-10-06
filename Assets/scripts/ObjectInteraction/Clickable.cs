@@ -36,7 +36,12 @@ public class Clickable : MonoBehaviour
         RaycastHit rayHit;
 
         if (Physics.Raycast(raycast, out rayHit, range))
-        {            
+        {
+            if(rayHit.rigidbody == null)
+            {
+                return;
+            }
+
             if(rayHit.rigidbody.gameObject == gameObject)
             {
                 onClick.Invoke();

@@ -35,7 +35,8 @@ public class HiddenAppear : MonoBehaviour
     private bool wasSeen = false;
     private bool hiderEnabled = true;
     private bool seenSinceHidden = true;
-    
+    private bool alwaysHidden = false;
+
     private float hideTime = 0f;
     private float showTime = 0f;
 
@@ -109,6 +110,12 @@ public class HiddenAppear : MonoBehaviour
             }
             else
             {
+                if (alwaysHidden)
+                {
+                    this.Hide();
+                    return;
+                }
+
                 foreach (var hidden in requiredAppears)
                 {
                     if (hidden.Hidden)
@@ -130,6 +137,11 @@ public class HiddenAppear : MonoBehaviour
 
     public void Appear()
     {
+        if (alwaysHidden)
+        {
+            return;
+        }
+
         if (this.IsDefinitelyVisible())
         {
             return;
@@ -173,18 +185,17 @@ public class HiddenAppear : MonoBehaviour
         seenSinceHidden = false;
     }
 
-    public void Hide()
+    public void Hide(bool force = false)
     {
-        if (this.IsDefinitelyVisible())
+        if (!force && this.IsDefinitelyVisible())
         {
             return;
         }
 
         var camera = Camera.main;
-        if(distanceThreshold > 0f && camera != null)
+        if(!force && distanceThreshold > 0f && camera != null)
         {
             var distance = Vector3.Distance(camera.transform.position, transform.position);
-            Debug.Log("distance " + distance);
             if (distance <= distanceThreshold)
             {
                 return;
@@ -241,6 +252,11 @@ public class HiddenAppear : MonoBehaviour
     public void Disable()
     {
         hiderEnabled = false;
+    }
+
+    public void MakeAlwaysHidden(bool alwaysHidden)
+    {
+        this.alwaysHidden = alwaysHidden;
     }
 
     private void GenerateTimes()
