@@ -122,7 +122,7 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
-    - _CoatMask: 0.099
+    - _CoatMask: 0.052
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
