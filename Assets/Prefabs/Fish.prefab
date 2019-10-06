@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4432981231588797101}
   - component: {fileID: 860530063593796386}
   - component: {fileID: 178621876084310726}
+  - component: {fileID: 8534024084290194576}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -133,3 +134,15 @@ SpringJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8534024084290194576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5604897214197926879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d523ee6f268612479594fd61a17e354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

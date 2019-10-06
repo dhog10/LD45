@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RoomHandler : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class RoomHandler : MonoBehaviour
 
     public GameObject hubRoom;
     public GameObject propsObject;
+    public Painting painting;
     public GameObject[] rooms;
+    public UnityEvent onRoomCompleted;
 
     private GameObject currentRoom;
     private Room hubComponent;
@@ -51,7 +54,7 @@ public class RoomHandler : MonoBehaviour
         currentRoom = room;
 
         var roomComponent = room.GetComponent<Room>();
-
+        
         roomComponent.GetPortal().destination = hubComponent.GetPortal();
         hubComponent.GetPortal().destination = roomComponent.GetPortal();
 
@@ -63,6 +66,8 @@ public class RoomHandler : MonoBehaviour
         if(rooms[roomIndex] != currentRoom)
         {
             this.SpawnRoom(rooms[roomIndex]);
+            hubComponent.GetDoor().Close();
+            painting.ResetPainting();
         }
     }
 

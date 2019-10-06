@@ -83,7 +83,7 @@ public class FishingRod : MonoBehaviour
     {
         // Checking if player can cast rod & generating hit point
         var canCast = false;
-        RaycastHit hit = new RaycastHit();
+        var hit = new RaycastHit();
         if (Camera.main &&
             Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000.0f) &&
             string.Equals(hit.transform.gameObject.tag, waterTag))
@@ -111,7 +111,7 @@ public class FishingRod : MonoBehaviour
             (!fishInstance ||
              !fishInstance.GetComponent<SpringJoint>()))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !bobberInstance)
             {
                 Destroy(bobberInstance);
 
@@ -126,13 +126,12 @@ public class FishingRod : MonoBehaviour
                     line.enabled = false;
                 }
             }
-            else if (Input.GetMouseButtonDown(1) && bobberInstance)
+            else if (Input.GetMouseButtonDown(0) && bobberInstance)
             {
                 this.PullLine();
             }
         }
-        else if ((Input.GetMouseButtonDown(0) ||
-                 Input.GetMouseButtonDown(1)) &&
+        else if (Input.GetMouseButtonDown(0) &&
                  fishInstance &&
                  fishInstance.GetComponent<SpringJoint>())
         {

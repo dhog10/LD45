@@ -26,19 +26,15 @@ public class BasketScore : MonoBehaviour
             return;
         }
 
-        Debug.Log("rb.velocity.y " + rb.velocity.y);
-
         if(rb.velocity.y > 0f)
         {
             return;
         }
 
         score++;
-        Debug.Log("score " + score);
 
         if(score >= scoreNeeded)
         {
-            Debug.Log("reached score");
             onScoreReached.Invoke();
         }
     }

@@ -12,6 +12,7 @@ public class Room : MonoBehaviour
     public float musicVolume = 1f;
     public float musicFadeMultiplier = 1f;
     public bool doorStartOpen = false;
+    public string completeText = "";
     public GameObject[] completionObjects;
 
     private Door door;
@@ -158,12 +159,16 @@ public class Room : MonoBehaviour
             return;
         }
 
-        Debug.Log("Complete room " + gameObject.name);
-
         complete = true;
         RoomHandler.Instance.IncrementRoom();
+        RoomHandler.Instance.onRoomCompleted?.Invoke();
 
-        if(completionObjects != null)
+        if(completeText.Length > 0)
+        {
+            RoomHandler.Instance.painting.SetText(completeText);
+        }
+
+        if (completionObjects != null)
         {
             foreach(var obj in completionObjects)
             {

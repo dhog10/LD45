@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class Painting : MonoBehaviour
 {
+    public HiddenAppear hiddenAppear;
+    public TextMeshPro textMesh;
     public UnityEvent onDropped;
 
     private Rigidbody rb;
@@ -22,5 +25,22 @@ public class Painting : MonoBehaviour
         rb.useGravity = true;
 
         onDropped?.Invoke();
+    }
+
+    public void ResetPainting()
+    {
+        hiddenAppear.Enable();
+        hiddenAppear.Hide();
+
+        rb.isKinematic = true;
+        rb.useGravity = false;
+
+        transform.position = transform.parent.transform.position;
+        transform.rotation = transform.parent.transform.rotation;
+    }
+
+    public void SetText(string message)
+    {
+        textMesh.text = message;
     }
 }

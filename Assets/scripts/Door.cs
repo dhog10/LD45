@@ -55,6 +55,7 @@ public class Door : MonoBehaviour
     {
         if (playSound && !open && openSound)
         {
+            openSound.Stop();
             openSound.Play();
         }
 
@@ -75,6 +76,7 @@ public class Door : MonoBehaviour
     {
         if (open && closeSound)
         {
+            closeSound.Stop();
             closeSound.Play();
         }
 
