@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Fishing": {
+        "Planks": {
             "shader": "Main shader"
         }
     }

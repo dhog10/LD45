@@ -34,10 +34,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.99631953, y: 0.9926391, z: 1, w: -0.016570007}
+    m_Value: {x: 0.9917188, y: 1, z: 0.98343754, w: -0.031883944}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9825429, z: 0.96018904, w: -0.11599004}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.030627873}
   gain:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   toeStrength:
     m_OverrideState: 0
     m_Value: 0
@@ -174,16 +174,16 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.202
     min: 0
     max: 1
   scatter:
     m_OverrideState: 1
-    m_Value: 0.349
+    m_Value: 0.444
     min: 0
     max: 1
   tint:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 0
