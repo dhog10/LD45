@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class Piano : MonoBehaviour
 {
+    [HideInInspector] public bool playable = false;
     [SerializeField] private float keyDistance = 0.05f;
     [SerializeField] private float keyDuration = 1.0f;
     [SerializeField] private AnimationCurve keyCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
-    [SerializeField] private string keyTag = "Key";
-    [SerializeField] private float maxPressDistance = 5.0f;
+    public string keyTag = "Key";
+    public float maxPressDistance = 5.0f;
     [SerializeField] private Material hoverMaterial;
     [Space(5)]
     [SerializeField] private GameObject c1;
@@ -24,8 +25,8 @@ public class Piano : MonoBehaviour
     [SerializeField] private GameObject g2;
     [SerializeField] private GameObject a2;
     [SerializeField] private GameObject b2;
-    private GameObject[] keys;
-    private float originalKeyYPosition;
+    [HideInInspector] public GameObject[] keys;
+    [HideInInspector] public float originalKeyYPosition;
     private Material originalMaterial;
 
     private void OnValidate()
@@ -46,8 +47,9 @@ public class Piano : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void OnEnable()
     {
+        playable = false;
         keys = new GameObject[] { c1, d1, e1, f1, g1, a1, b1, c2, d2, e2, f2, g2, a2, b2 };
         originalKeyYPosition = c1.transform.position.y;
         originalMaterial = c1.GetComponent<Renderer>().material;
@@ -64,39 +66,46 @@ public class Piano : MonoBehaviour
             }
         }
 
-        if (Camera.main &&
-            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit, maxPressDistance) &&
-            string.Equals(hit.transform.gameObject.tag, keyTag) &&
-            hit.transform.position.y == originalKeyYPosition)
+        if (playable)
         {
-            var hitKey = hit.transform.gameObject;
-
-            hitKey.GetComponent<Renderer>().material = hoverMaterial;
-
-            if (Input.GetMouseButtonDown(0))
+            if (Camera.main &&
+                Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit, maxPressDistance) &&
+                string.Equals(hit.transform.gameObject.tag, keyTag) &&
+                hit.transform.position.y == originalKeyYPosition)
             {
-                hitKey.GetComponent<AudioSource>().Play();
-                StartCoroutine(this.KeyPress(hitKey.transform));
+                var hitKey = hit.transform.gameObject;
+
+                hitKey.GetComponent<Renderer>().material = hoverMaterial;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    StartCoroutine(this.KeyPress(hitKey));
+                }
             }
         }
     }
 
-    private IEnumerator KeyPress(Transform key)
+    public IEnumerator KeyPress(GameObject key)
     {
-        var originalPosition = key.position;
+        key.GetComponent<AudioSource>().Play();
+
+        var keyTransform = key.transform;
+        var originalPosition = keyTransform.position;
         var pressedPosition = new Vector3(originalPosition.x,
                                           originalPosition.y - keyDistance,
                                           originalPosition.z);
 
+        yield return new WaitForEndOfFrame();
+
         var t = 0.0f;
         while (t <= 1.0f)
         {
-            key.position = Vector3.Lerp(originalPosition, pressedPosition, keyCurve.Evaluate(t));
+            keyTransform.position = Vector3.Lerp(originalPosition, pressedPosition, keyCurve.Evaluate(t));
 
             t += Time.deltaTime / keyDuration;
 
             yield return new WaitForEndOfFrame();
         }
-        key.position = originalPosition;
+        keyTransform.position = originalPosition;
     }
 }
