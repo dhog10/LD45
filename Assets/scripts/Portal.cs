@@ -93,6 +93,7 @@ public class Portal : MonoBehaviour
                 var euler = destination.portalCamera.transform.rotation.eulerAngles;
 
                 controller.cameraYaw = euler.y;
+                controller.NotifyTeleported();
 
                 var localPosition = transform.InverseTransformPoint(playerObject.transform.position);
 

@@ -10,8 +10,12 @@ public class RoomHandler : MonoBehaviour
     public GameObject hubRoom;
     public GameObject propsObject;
     public Painting painting;
+    public int startingRoom = 0;
     public GameObject[] rooms;
     public UnityEvent onRoomCompleted;
+
+    [HideInInspector]
+    public PlayerController player;
 
     private GameObject currentRoom;
     private Room hubComponent;
@@ -24,6 +28,8 @@ public class RoomHandler : MonoBehaviour
 
     void Start()
     {
+        roomIndex = Mathf.Min(rooms.Length - 1, startingRoom);
+
         hubComponent = hubRoom.GetComponent<Room>();
         hubComponent.EnterRoom();
 
@@ -36,6 +42,16 @@ public class RoomHandler : MonoBehaviour
                 var child = propsObject.transform.GetChild(i);
                 child.gameObject.SetActive(false);
             }
+        }
+
+        player = FindObjectOfType<PlayerController>();
+    }
+
+    private void Update()
+    {
+        if(player == null)
+        {
+            player = FindObjectOfType<PlayerController>();
         }
     }
 

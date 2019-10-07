@@ -45,6 +45,7 @@ public class HiddenAppear : MonoBehaviour
     private bool hiderEnabled = true;
     private bool seenSinceHidden = true;
     private bool alwaysHidden = false;
+    private bool spawnsLocked;
 
     private float hideTime = 0f;
     private float showTime = 0f;
@@ -60,24 +61,7 @@ public class HiddenAppear : MonoBehaviour
         }
 
         spawns = new List<SpawnPosition>();
-
-        spawns.Add(new SpawnPosition()
-        {
-            pos = transform.position,
-            ang = transform.rotation,
-        });
-
-        if (spawnPositions != null)
-        {
-            foreach (var spawn in spawnPositions)
-            {
-                spawns.Add(new SpawnPosition()
-                {
-                    pos = spawn.transform.position,
-                    ang = spawn.transform.rotation,
-                });
-            }
-        }
+        this.SetPositions(spawnPositions, true);
 
         wasSeen = !startHidden;
         this.GenerateTimes();
@@ -143,6 +127,42 @@ public class HiddenAppear : MonoBehaviour
                         this.Hide();
                     }
                 }
+            }
+        }
+    }
+
+    public void SetPositions(GameObject[] positions, bool includeSelf, bool lockSpawns = false)
+    {
+        if (spawnsLocked)
+        {
+            return;
+        }
+
+        if (lockSpawns)
+        {
+            spawnsLocked = true;
+        }
+
+        spawns.Clear();
+
+        if (includeSelf)
+        {
+            spawns.Add(new SpawnPosition()
+            {
+                pos = transform.position,
+                ang = transform.rotation,
+            });
+        }
+
+        if (positions != null)
+        {
+            foreach (var spawn in positions)
+            {
+                spawns.Add(new SpawnPosition()
+                {
+                    pos = spawn.transform.position,
+                    ang = spawn.transform.rotation,
+                });
             }
         }
     }
