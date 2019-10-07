@@ -11,11 +11,14 @@ public class BlackBoard : MonoBehaviour
     [SerializeField] TextMeshPro tmAnswer3;
     [SerializeField] TextMeshPro tmAnswer4;
     [SerializeField] GameObject mark;
+    [SerializeField] int questionsWrongAllowed;
 
     TextMeshPro tmMark;
-    private Question[] questions = new Question[4];
+    private Question[] questions = new Question[6];
 
-    private int questionIndex = 1;
+    private int questionIndex = 0;
+
+    private int questionsWrong = 0;
 
     private string questionText;
     private string answer1;
@@ -46,7 +49,7 @@ public class BlackBoard : MonoBehaviour
         answer3 = "Spain";
         answer4 = "Italy";
         correctAnswer = answer1;
-        questions[2] = new Question(questionText, answer1, answer2, answer3, answer4, correctAnswer);
+        questions[1] = new Question(questionText, answer1, answer2, answer3, answer4, correctAnswer);
 
         questionText = "Which is the longest river in the world?";
         answer1 = "Amazon River";
@@ -54,7 +57,31 @@ public class BlackBoard : MonoBehaviour
         answer3 = "Congo River";
         answer4 = "Nile River";
         correctAnswer = answer4;
+        questions[2] = new Question(questionText, answer1, answer2, answer3, answer4, correctAnswer);
+
+        questionText = "What's the term for comparing one thing to another?";
+        answer1 = "Synonym";
+        answer2 = "Antonym";
+        answer3 = "Simile";
+        answer4 = "Alliteration";
+        correctAnswer = answer3;
         questions[3] = new Question(questionText, answer1, answer2, answer3, answer4, correctAnswer);
+
+        questionText = "In which continent are the Atlas mountains?";
+        answer1 = "Africa";
+        answer2 = "South America";
+        answer3 = "North America";
+        answer4 = "Asia";
+        correctAnswer = answer1;
+        questions[4] = new Question(questionText, answer1, answer2, answer3, answer4, correctAnswer);
+
+        questionText = "Which types of buildings did Henry VIII destroy?";
+        answer1 = "Monasteries";
+        answer2 = "Palaces";
+        answer3 = "Castles";
+        answer4 = "Prisons";
+        correctAnswer = answer1;
+        questions[5] = new Question(questionText, answer1, answer2, answer3, answer4, correctAnswer);
 
 
         tmQuestion.SetText(questions[questionIndex].questionText);
@@ -79,15 +106,18 @@ public class BlackBoard : MonoBehaviour
 
             string playerAnswer = obj.GetComponent<TextMeshPro>().text;
 
-            if (questionIndex < 3)
+            if (questionIndex < 5)
             {
                 if (playerAnswer == questions[questionIndex].correctAnswer)
                 {
-                    tmMark.SetText("Correct! :D.");
+                    tmMark.SetText("Correct!");
+                    Debug.Log(questionsWrong);
                 }
                 else
                 {
-                    tmMark.SetText("Incorrect >:(.");
+                    tmMark.SetText("Incorrect.");
+                    questionsWrong++;
+                    Debug.Log(questionsWrong);
                 }
 
                 questionIndex++;
@@ -100,13 +130,29 @@ public class BlackBoard : MonoBehaviour
             }
             else
             {
-                tmQuestion.enabled = false;
-                tmAnswer1.enabled = false;
-                tmAnswer2.enabled = false;
-                tmAnswer3.enabled = false;
-                tmAnswer4.enabled = false;
 
-                tmMark.SetText("Goodbye Class!");
+                if (questionsWrong >= questionsWrongAllowed)
+                {
+                    questionIndex = 0;
+                    questionsWrong = 0;
+                    tmQuestion.SetText(questions[questionIndex].questionText);
+                    tmAnswer1.SetText(questions[questionIndex].answer1);
+                    tmAnswer2.SetText(questions[questionIndex].answer2);
+                    tmAnswer3.SetText(questions[questionIndex].answer3);
+                    tmAnswer4.SetText(questions[questionIndex].answer4);
+
+                    tmMark.SetText("Try Again.");
+                } else
+                {
+
+                    tmQuestion.enabled = false;
+                    tmAnswer1.enabled = false;
+                    tmAnswer2.enabled = false;
+                    tmAnswer3.enabled = false;
+                    tmAnswer4.enabled = false;
+
+                    tmMark.SetText("Goodbye Class!");
+                }
             }
         }
     }

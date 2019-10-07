@@ -703,6 +703,7 @@ MonoBehaviour:
   tmAnswer3: {fileID: 2631199485399740147}
   tmAnswer4: {fileID: 8503108888444893215}
   mark: {fileID: 3757201956363111414}
+  questionsWrongAllowed: 3
 --- !u!23 &6362173101046437068
 MeshRenderer:
   m_ObjectHideFlags: 0
