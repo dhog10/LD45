@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SuperRoom : Room
 {
@@ -9,6 +10,7 @@ public class SuperRoom : Room
     public float doorJebaitDistance = 8f;
     public GameObject signPositions;
     public GameObject[] signs;
+    public UnityEvent onSignComplete;
 
     private int doorJebaits = 0;
     private bool hasHooked = false;
@@ -96,6 +98,7 @@ public class SuperRoom : Room
 
         if(signIndex >= signs.Length)
         {
+            onSignComplete?.Invoke();
             return;
         }
 

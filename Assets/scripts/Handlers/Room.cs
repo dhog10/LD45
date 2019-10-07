@@ -15,6 +15,8 @@ public class Room : MonoBehaviour
     public bool doorStartOpen = false;
     public string completeText = "";
     public AudioSource ambientSound;
+    public bool musicSoundOn = true;
+    public bool ambientSoundOn = true;
     public GameObject[] completionObjects;
 
     private Door door;
@@ -26,6 +28,7 @@ public class Room : MonoBehaviour
     private float fogStart = 0f;
     private bool complete = false;
     private float currentMusicVolume = 0f;
+    private float currentAmbientVolume = 0f;
 
     private AudioSource musicAudio;
     
@@ -42,7 +45,7 @@ public class Room : MonoBehaviour
 
         if(ambientSound != null)
         {
-            ambientSound.volume = currentMusicVolume;
+            ambientSound.volume = currentAmbientVolume;
         }
 
         door = transform.GetComponentInChildren<Door>(true);
@@ -121,11 +124,29 @@ public class Room : MonoBehaviour
                 }
             }
 
-            currentMusicVolume = Mathf.Min(1f, currentMusicVolume + musicFadeMultiplier * Time.deltaTime);
+            if (musicSoundOn)
+            {
+                currentMusicVolume = Mathf.Min(1f, currentMusicVolume + musicFadeMultiplier * Time.deltaTime);
+            }
+            else
+            {
+                currentMusicVolume = Mathf.Max(0f, currentMusicVolume - musicFadeMultiplier * Time.deltaTime);
+            }
+
+            if (ambientSoundOn)
+            {
+                currentAmbientVolume = Mathf.Min(1f, currentAmbientVolume + musicFadeMultiplier * Time.deltaTime);
+            }
+            else
+            {
+                currentAmbientVolume = Mathf.Max(0f, currentAmbientVolume - musicFadeMultiplier * Time.deltaTime);
+            }
+
         }
         else
         {
             currentMusicVolume = Mathf.Max(0f, currentMusicVolume - musicFadeMultiplier * Time.deltaTime);
+            currentAmbientVolume = Mathf.Max(0f, currentAmbientVolume - musicFadeMultiplier * Time.deltaTime);
         }
 
         if(musicAudio != null)
@@ -134,7 +155,7 @@ public class Room : MonoBehaviour
 
             if(ambientSound != null)
             {
-                ambientSound.volume = currentMusicVolume * ambientVolume;
+                ambientSound.volume = currentAmbientVolume * ambientVolume;
             }
 
             if(currentMusicVolume > 0f)
@@ -143,11 +164,6 @@ public class Room : MonoBehaviour
                 {
                     musicAudio.Play();
                 }
-
-                if (ambientSound != null && !ambientSound.isPlaying)
-                {
-                    ambientSound.Play();
-                }
             }
             else
             {
@@ -155,7 +171,17 @@ public class Room : MonoBehaviour
                 {
                     musicAudio.Stop();
                 }
+            }
 
+            if(currentAmbientVolume > 0f)
+            {
+                if (ambientSound != null && !ambientSound.isPlaying)
+                {
+                    ambientSound.Play();
+                }
+            }
+            else
+            {
                 if (ambientSound != null && ambientSound.isPlaying)
                 {
                     ambientSound.Stop();
@@ -217,5 +243,25 @@ public class Room : MonoBehaviour
     public void ExitRoom()
     {
         inRoom = false;
+    }
+
+    public void EnableAmbientSound()
+    {
+        ambientSoundOn = true;
+    }
+
+    public void DisableAmbientSound()
+    {
+        ambientSoundOn = false;
+    }
+
+    public void EnableMusic()
+    {
+        musicSoundOn = true;
+    }
+
+    public void DisableMusic()
+    {
+        musicSoundOn = false;
     }
 }
