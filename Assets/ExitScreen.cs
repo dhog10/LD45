@@ -62,6 +62,6 @@ public class ExitScreen : MonoBehaviour
 
     public bool HasExited()
     {
-        return creditsActive;
+        return creditsActive && Time.time - creditsStarted > 0.2f;
     }
 }

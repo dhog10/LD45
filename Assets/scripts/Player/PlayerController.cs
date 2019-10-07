@@ -597,7 +597,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsSprinting()
     {
-        return Input.GetKey(KeyCode.LeftShift) && !aimingWeapon;
+        return false;// Input.GetKey(KeyCode.LeftShift) && !aimingWeapon;
     }
 
     public float GetTargetSpeed()

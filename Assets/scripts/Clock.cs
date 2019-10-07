@@ -68,7 +68,7 @@ public class Clock : MonoBehaviour
         {
             var originalHandRotationEuler = hand.localRotation.eulerAngles;
             var newHandRotationEuler = originalHandRotationEuler;
-            newHandRotationEuler.z += 30.0f;
+            newHandRotationEuler.z += 6f;
             if (newHandRotationEuler.z > 360.0f)
             {
                 newHandRotationEuler.z -= 360.0f;
