@@ -62,6 +62,6 @@ public class ExitScreen : MonoBehaviour
 
     public bool HasExited()
     {
-        creditsActive = true;
+        return creditsActive;
     }
 }
