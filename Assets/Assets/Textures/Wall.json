@@ -33,7 +33,7 @@
         }
     },
     "texturesets": {
-        "Wall": {
+        "WallGrunge": {
             "shader": "Main shader"
         }
     }
