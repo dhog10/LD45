@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class HiddenAppear : MonoBehaviour
 {
+    public bool dontWaitForVisible = false;
     [Tooltip("The visibility collider used when hidden.")]
     public GameObject hideTriggerObject;
     [Tooltip("The visibility collider used when visible.")]
@@ -120,7 +121,7 @@ public class HiddenAppear : MonoBehaviour
                     }
                 }
 
-                if (alwaysHidden || (seenSinceHidden && wasSeen))
+                if ((dontWaitForVisible || alwaysHidden) || (seenSinceHidden && wasSeen))
                 {
                     if (Time.time - lastHidden >= showTime)
                     {
@@ -142,6 +143,12 @@ public class HiddenAppear : MonoBehaviour
         {
             spawnsLocked = true;
         }
+
+        if(spawns == null)
+        {
+            spawns = new List<SpawnPosition>();
+        }
+
 
         spawns.Clear();
 

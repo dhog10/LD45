@@ -11,10 +11,12 @@ public class Painting : MonoBehaviour
     public UnityEvent onDropped;
 
     private Rigidbody rb;
+    private AudioSource clickAudio;
 
     private void Start()
     {
         rb = transform.GetComponent<Rigidbody>();
+        clickAudio = GetComponent<AudioSource>();
     }
 
     public void Fall()
@@ -23,6 +25,12 @@ public class Painting : MonoBehaviour
 
         rb.isKinematic = false;
         rb.useGravity = true;
+
+        if(clickAudio != null)
+        {
+            clickAudio.Stop();
+            clickAudio.Play();
+        }
 
         onDropped?.Invoke();
     }

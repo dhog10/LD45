@@ -128,7 +128,7 @@ public class Portal : MonoBehaviour
     {
         if (!portalEnabled || destination == null || !destination.isActiveAndEnabled)
         {
-            if (portalCamera.gameObject.activeSelf)
+            if (portalCamera != null && portalCamera.gameObject.activeSelf)
             {
                 portalCamera.gameObject.SetActive(false);
             }
@@ -143,7 +143,7 @@ public class Portal : MonoBehaviour
 
         if (destination.IsInRoom())
         {
-            if (!portalCamera.gameObject.activeSelf)
+            if (portalCamera != null && !portalCamera.gameObject.activeSelf)
             {
                 portalCamera.gameObject.SetActive(true);
             }
@@ -152,7 +152,7 @@ public class Portal : MonoBehaviour
         }
         else
         {
-            if (portalCamera.gameObject.activeSelf)
+            if (portalCamera != null && portalCamera.gameObject.activeSelf)
             {
                 portalCamera.gameObject.SetActive(false);
             }
@@ -203,6 +203,11 @@ public class Portal : MonoBehaviour
 
     private void PositionCamera()
     {
+        if(portalCamera == null)
+        {
+            return;
+        }
+
         portalCamera.transform.position = this.GetCameraPosition();
         portalCamera.transform.rotation = this.GetCameraAngle();
 
