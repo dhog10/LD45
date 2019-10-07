@@ -10,6 +10,11 @@ public class Credits : MonoBehaviour
 
     private float timeExisted;
 
+    private void Start()
+    {
+        logo.color = new Color(0f, 0f, 0f, 0f);
+    }
+
     private void Update()
     {
         if (music.isPlaying)
@@ -29,7 +34,5 @@ public class Credits : MonoBehaviour
         var color = new Color(1f, 1f, 1f, timeExisted);
 
         logo.color = color;
-
-
     }
 }
