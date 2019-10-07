@@ -110,6 +110,8 @@ public class PlayerController : MonoBehaviour
     private bool recoilUp = false;
     private GameObject ui3D2D;
     private Vector3 currentCameraPosition;
+    private Vector3 currentVelocity;
+    private bool setVelocityNextUpdate;
 
     private void Awake()
     {
@@ -278,7 +280,7 @@ public class PlayerController : MonoBehaviour
             var direction = fpsCameraPosition.transform.forward;
             direction.y = 0f;
 
-            var newPosition = transform.position + new Vector3(0f, currentCameraHeight, 0f) + direction * 0.15f;
+            var newPosition = fpsCameraPosition.transform.position + fpsCameraPosition.transform.up * 0.18f + fpsCameraPosition.transform.forward * 0.08f; //transform.position + new Vector3(0f, currentCameraHeight, 0f) + direction * 0.15f;
 
             var distance = Vector3.Distance(currentCameraPosition, newPosition);
 
@@ -288,7 +290,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                currentCameraPosition = currentCameraPosition + (newPosition - currentCameraPosition) * Time.deltaTime * 5f;
+                currentCameraPosition = currentCameraPosition + (newPosition - currentCameraPosition) * Time.deltaTime * 20f;
             }
 
             playerCamera.gameObject.transform.position = currentCameraPosition;
@@ -562,7 +564,17 @@ public class PlayerController : MonoBehaviour
         velocity.Normalize();
         velocity *= GetTargetSpeed();
 
-        var difference = velocity - rb.velocity;
+        if (setVelocityNextUpdate)
+        {
+            setVelocityNextUpdate = false;
+            currentVelocity = velocity;
+        }
+        else
+        {
+            currentVelocity = currentVelocity + (velocity - currentVelocity) * Time.fixedDeltaTime * 5f;
+        }
+
+        var difference = currentVelocity - rb.velocity;
         difference.y = 0;
 
         rb.AddForce(difference, ForceMode.VelocityChange);
@@ -738,6 +750,11 @@ public class PlayerController : MonoBehaviour
         var rotQ = Quaternion.Euler(cameraPitch + ((IsThirdPerson()) ? currentThirdPersonCameraPitchOffset : 0) + pitchOffset, cameraYaw, 0);
 
         return rotQ;
+    }
+
+    public void NotifyTeleported()
+    {
+        setVelocityNextUpdate = true;
     }
 }
 

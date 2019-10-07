@@ -32,7 +32,7 @@ public class Room : MonoBehaviour
     public AudioSource MusicAudio => musicAudio;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         musicAudio = GetComponent<AudioSource>();
         if (musicAudio != null)
@@ -76,7 +76,7 @@ public class Room : MonoBehaviour
         }
     }
 
-    private void Update()
+    public virtual void Update()
     {
         Debug.DrawLine(transform.position, transform.position + transform.forward * roomSize);
 

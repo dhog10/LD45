@@ -49,7 +49,7 @@ public class ClickDelegate : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 if (pickUpObject.childCount == 0)
-                {
+                {       
                     OnClick(rayHit.transform.gameObject);
                 }
                 

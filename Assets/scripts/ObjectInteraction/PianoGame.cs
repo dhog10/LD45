@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PianoGame : MonoBehaviour
 {
+    public UnityEvent onComplete;
+
     [SerializeField] private Transform player;
     [SerializeField] private Piano piano;
     [SerializeField] private AudioSource failAudio;
@@ -13,7 +16,6 @@ public class PianoGame : MonoBehaviour
     [SerializeField] private float introDelay = 0.25f;
     [SerializeField] private float sequencesDelay = 1.0f;
     [SerializeField] private float resultAudioDelay = 1.0f;
-    [SerializeField] private float perKeyResponseTime = 2.0f;
     [Space(5)]
     [SerializeField] private PianoSequence[] pianoSequences;
     private bool activated = false;
@@ -43,6 +45,7 @@ public class PianoGame : MonoBehaviour
         if (currentPianoSequence >= pianoSequences.Length)
         {
             StartCoroutine(this.Outro());
+            onComplete?.Invoke();
             return;
         }
 
@@ -120,7 +123,6 @@ public class PianoGame : MonoBehaviour
         sequenceInputting = true;
         var currentKeyPress = 0;
 
-        var timeRemaining = pianoSequence.keyPresses.Length * perKeyResponseTime;
         while (sequenceInputting)
         {
             if (pressedKey)
@@ -145,15 +147,7 @@ public class PianoGame : MonoBehaviour
                 }
             }
 
-            timeRemaining -= Time.deltaTime;
-            
             yield return new WaitForEndOfFrame();
-
-            if (timeRemaining <= 0.0f)
-            {
-                failAudio.Play();
-                sequenceInputting = false;
-            }
         }
     }
 }
