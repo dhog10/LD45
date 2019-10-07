@@ -9210,6 +9210,8 @@ MonoBehaviour:
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects: []
 --- !u!82 &315831157
 AudioSource:
@@ -12038,6 +12040,8 @@ MonoBehaviour:
   ambientSound: {fileID: 1567963}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects:
   - {fileID: 1195300387}
 --- !u!82 &447473114
@@ -18960,6 +18964,8 @@ MonoBehaviour:
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects: []
   doorJebaitAmount: 4
   doorJebaitDistance: 8
@@ -38107,6 +38113,8 @@ MonoBehaviour:
   ambientSound: {fileID: 1136759260}
   musicSoundOn: 1
   ambientSoundOn: 0
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects: []
   doorJebaitAmount: 4
   doorJebaitDistance: 6
@@ -41851,31 +41859,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.35499197, z: 3.500001}
   m_Center: {x: -1.000061, y: 0.07250789, z: 1.7500005}
---- !u!1 &1558675866 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 8848c344083dc4d438047fd165b72649,
-    type: 3}
-  m_PrefabInstance: {fileID: 112071171}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1558675867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8848c344083dc4d438047fd165b72649,
     type: 3}
   m_PrefabInstance: {fileID: 112071171}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1558675868
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558675866}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0.35499233, z: 3.5}
-  m_Center: {x: -0.99999994, y: 0.07250765, z: 1.75}
 --- !u!1 &1560029453
 GameObject:
   m_ObjectHideFlags: 0
@@ -44453,6 +44442,8 @@ MonoBehaviour:
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects:
   - {fileID: 29951855}
   - {fileID: 1569349859}
@@ -47507,6 +47498,8 @@ MonoBehaviour:
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects:
   - {fileID: 413859704}
   - {fileID: 1961225814}
