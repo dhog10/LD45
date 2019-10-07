@@ -49,6 +49,11 @@ public class Door : MonoBehaviour
 
         var quat = Quaternion.AngleAxis(-openAngle, transform.up);
         door.transform.rotation = transform.rotation * quat;
+
+        if (portal != null && portal.IsPortalEnabled() && !this.IsOpen())
+        {
+            portal.DisablePortal();
+        }
     }
 
     public void Open(bool playSound = true)
@@ -81,15 +86,15 @@ public class Door : MonoBehaviour
         }
 
         open = false;
-
-        if (portal)
-        {
-            portal.DisablePortal();
-        }
     }
 
     public bool IsOpen()
     {
         return open;
+    }
+
+    public bool IsFullyClosed()
+    {
+        return openAngle < 1f;
     }
 }

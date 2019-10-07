@@ -6666,6 +6666,8 @@ MonoBehaviour:
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects: []
 --- !u!82 &315831157
 AudioSource:
@@ -9165,6 +9167,8 @@ MonoBehaviour:
   ambientSound: {fileID: 1567963}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects:
   - {fileID: 1195300387}
 --- !u!82 &447473114
@@ -14307,6 +14311,8 @@ MonoBehaviour:
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects: []
   doorJebaitAmount: 4
   doorJebaitDistance: 8
@@ -22246,7 +22252,7 @@ PrefabInstance:
     - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
       propertyPath: onHideRoomIncomplete.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
@@ -22313,6 +22319,21 @@ PrefabInstance:
       propertyPath: spawnPositions.Array.data[8]
       value: 
       objectReference: {fileID: 1280214540}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: onHideRoomIncomplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1388457106}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: onHideRoomIncomplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableNextRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: onHideRoomIncomplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5641534327923300486, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23190,6 +23211,7 @@ MonoBehaviour:
   - {fileID: 447473111}
   - {fileID: 1670152204}
   - {fileID: 1388457104}
+  - {fileID: 691652693}
   onRoomCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -25006,7 +25028,7 @@ PrefabInstance:
     - target: {fileID: 5641534327923300486, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7584679
+      value: 0.6517102
       objectReference: {fileID: 0}
     - target: {fileID: 5641534327923300486, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
@@ -25016,7 +25038,7 @@ PrefabInstance:
     - target: {fileID: 5641534327923300486, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6517104
+      value: -0.75846815
       objectReference: {fileID: 0}
     - target: {fileID: 5641534327923300486, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
@@ -25031,7 +25053,7 @@ PrefabInstance:
     - target: {fileID: 5641534327923300486, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 458.659
+      value: 278.659
       objectReference: {fileID: 0}
     - target: {fileID: 5641534327923300486, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
@@ -25042,6 +25064,76 @@ PrefabInstance:
         type: 3}
       propertyPath: distance
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327487884686, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: inverted
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327487884683, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327487884683, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327487884683, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710695
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327487884683, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327487884683, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000044703484
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327487884683, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -900
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327487884683, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534328579391317, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534328579391317, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000029802317
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534328579391317, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00000030556436
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534328579391317, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000015805072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534328579391317, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534328579391317, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -360
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d34cc58f834cef7449b44db638d93bc2, type: 3}
@@ -29561,6 +29653,8 @@ MonoBehaviour:
   ambientSound: {fileID: 1136759260}
   musicSoundOn: 1
   ambientSoundOn: 0
+  nextRoomOverride: {fileID: 691652695}
+  nextRoomEnabled: 0
   completionObjects: []
   doorJebaitAmount: 4
   doorJebaitDistance: 6
@@ -34607,6 +34701,8 @@ MonoBehaviour:
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects:
   - {fileID: 29951855}
   - {fileID: 1569349859}
@@ -37017,6 +37113,8 @@ MonoBehaviour:
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
+  nextRoomOverride: {fileID: 0}
+  nextRoomEnabled: 0
   completionObjects:
   - {fileID: 413859704}
   - {fileID: 1961225814}

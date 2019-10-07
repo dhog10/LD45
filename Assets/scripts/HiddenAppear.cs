@@ -312,6 +312,11 @@ public class HiddenAppear : MonoBehaviour
 
     private void PickPosition()
     {
+        if(spawns == null)
+        {
+            return;
+        }
+
         var index = Random.Range(0, spawns.Count - 1);
 
         var spawn = spawns[index];
