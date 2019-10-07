@@ -120,7 +120,7 @@ public class HiddenAppear : MonoBehaviour
                     }
                 }
 
-                if (seenSinceHidden && wasSeen)
+                if (alwaysHidden || (seenSinceHidden && wasSeen))
                 {
                     if (Time.time - lastHidden >= showTime)
                     {

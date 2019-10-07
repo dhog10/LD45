@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     public GameObject door;
     public AudioSource openSound;
     public AudioSource closeSound;
+    public bool neverClose = false;
 
     private float openAngle = 0f;
     private bool open = false;
@@ -79,6 +80,11 @@ public class Door : MonoBehaviour
 
     public void Close(bool playSound = true)
     {
+        if (neverClose)
+        {
+            return;
+        }
+
         if (playSound && open && closeSound)
         {
             closeSound.Stop();
