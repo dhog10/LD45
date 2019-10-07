@@ -24,12 +24,17 @@ public class Sign : MonoBehaviour
             return;
         }
 
+        fallen = true;
+
         hidden.Disable();
         rb.isKinematic = false;
         rb.useGravity = true;
 
-        fallen = true;
-
         onFall?.Invoke();
+    }
+
+    public bool IsFallen()
+    {
+        return fallen;
     }
 }

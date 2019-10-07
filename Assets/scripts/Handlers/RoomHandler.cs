@@ -75,6 +75,16 @@ public class RoomHandler : MonoBehaviour
                             overrideRoom.GetDoor().Open(false);
                         }
                     }
+                    else
+                    {
+                        var overrideDoor = overrideRoom.GetDoor();
+                        if (overrideDoor != null)
+                        {
+                            room.GetPortal().destination = overrideRoom.GetPortal();
+                            overrideRoom.GetPortal().destination = room.GetPortal();
+                            overrideRoom.GetDoor().Open(false);
+                        }
+                    }
                 }
                 else
                 {

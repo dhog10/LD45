@@ -289,7 +289,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 198237216}
   disableObject: {fileID: 198237216}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -1553,7 +1553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63017287}
   m_LocalRotation: {x: -0, y: 0.97618157, z: -0, w: 0.21695521}
-  m_LocalPosition: {x: -4.8099976, y: 0, z: 36.9}
+  m_LocalPosition: {x: -5.33, y: 0, z: 1.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -1752,7 +1752,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1453989119}
   disableObject: {fileID: 1453989119}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 223588726}
   disableObject: {fileID: 223588726}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -3236,7 +3236,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 527210833}
   disableObject: {fileID: 527210833}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -3764,7 +3764,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 826581364}
   disableObject: {fileID: 826581364}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -4188,7 +4188,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 199516520}
   disableObject: {fileID: 199516520}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -4512,7 +4512,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 937938380}
   disableObject: {fileID: 937938380}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -5581,7 +5581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205765367}
   m_LocalRotation: {x: -0, y: 0.18306251, z: -0, w: 0.98310125}
-  m_LocalPosition: {x: 25.309998, y: 0, z: 21.46}
+  m_LocalPosition: {x: 9.29, y: 0, z: -0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -5849,7 +5849,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 2033033354}
   disableObject: {fileID: 2033033354}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -7651,7 +7651,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1511118472}
   disableObject: {fileID: 1511118472}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -8797,7 +8797,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 10176656}
   disableObject: {fileID: 10176656}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -9479,7 +9479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313059103}
   m_LocalRotation: {x: -0, y: 0.8705573, z: -0, w: -0.4920671}
-  m_LocalPosition: {x: 9.48999, y: 0, z: -26.19}
+  m_LocalPosition: {x: 19.76, y: 0, z: -3.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -10485,7 +10485,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1215173110}
   disableObject: {fileID: 1215173110}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -10648,7 +10648,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 345626577}
   disableObject: {fileID: 345626577}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -11545,7 +11545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399681837}
   m_LocalRotation: {x: -0, y: -0.48501384, z: -0, w: 0.87450653}
-  m_LocalPosition: {x: -11.0099945, y: 0, z: 11.15}
+  m_LocalPosition: {x: -1.71, y: 0, z: 1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -11575,7 +11575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400425015}
   m_LocalRotation: {x: -0, y: 0.99847454, z: -0, w: 0.055215452}
-  m_LocalPosition: {x: 1.7799988, y: 0, z: 19.77}
+  m_LocalPosition: {x: 6.71, y: 0, z: 10.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -13597,7 +13597,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 64719290}
   disableObject: {fileID: 64719290}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -13829,6 +13829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 546983727169679915, guid: acd3929497de2a148971cf60233fb38c,
+        type: 3}
+      propertyPath: dontWaitForVisible
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2525031623891614333, guid: acd3929497de2a148971cf60233fb38c,
         type: 3}
@@ -14130,7 +14135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505842135}
   m_LocalRotation: {x: -0, y: -0.6603573, z: -0, w: -0.7509515}
-  m_LocalPosition: {x: -7.300003, y: 0, z: -13.23}
+  m_LocalPosition: {x: 10.36, y: 0, z: -7.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -14336,7 +14341,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 710630015}
   disableObject: {fileID: 710630015}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -15302,7 +15307,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1456907652}
   disableObject: {fileID: 1456907652}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -16043,7 +16048,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 277466521}
   disableObject: {fileID: 277466521}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -17799,7 +17804,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 210882853}
   disableObject: {fileID: 210882853}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -19364,7 +19369,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1045226430}
   disableObject: {fileID: 1045226430}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -19769,7 +19774,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 515987619}
   disableObject: {fileID: 515987619}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -20370,7 +20375,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 433365557}
   disableObject: {fileID: 433365557}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -20442,7 +20447,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 820246472}
   disableObject: {fileID: 820246472}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -21284,7 +21289,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 289127799}
   disableObject: {fileID: 289127799}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -21460,7 +21465,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 474339735}
   disableObject: {fileID: 474339735}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -21717,7 +21722,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 242900318}
   disableObject: {fileID: 242900318}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -22126,7 +22131,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 184159231}
   disableObject: {fileID: 184159231}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -22776,7 +22781,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1157709238}
   disableObject: {fileID: 1157709238}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -23270,7 +23275,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 100842929}
   disableObject: {fileID: 100842929}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -23748,6 +23753,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 546983727169679915, guid: acd3929497de2a148971cf60233fb38c,
+        type: 3}
+      propertyPath: dontWaitForVisible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2525031623891614333, guid: acd3929497de2a148971cf60233fb38c,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -23998,7 +24008,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 464644902}
   disableObject: {fileID: 464644902}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -25099,7 +25109,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1837009342}
   disableObject: {fileID: 1837009342}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -25244,7 +25254,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1485506048}
   disableObject: {fileID: 1485506048}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -25964,7 +25974,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 540530184}
   disableObject: {fileID: 540530184}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -26010,7 +26020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910209481}
   m_LocalRotation: {x: -0, y: -0.4226495, z: -0, w: -0.9062932}
-  m_LocalPosition: {x: -16.550003, y: 0, z: -12.96}
+  m_LocalPosition: {x: -16.02, y: 0, z: -13.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -26355,7 +26365,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 234517867}
   disableObject: {fileID: 234517867}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -26761,7 +26771,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1386789253}
   disableObject: {fileID: 1386789253}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -27385,7 +27395,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1019789302}
   disableObject: {fileID: 1019789302}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -27532,7 +27542,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1736555068}
   disableObject: {fileID: 1736555068}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -27677,7 +27687,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 108477500}
   disableObject: {fileID: 108477500}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -27880,7 +27890,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 377860089}
   disableObject: {fileID: 377860089}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -28259,7 +28269,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1316526695}
   disableObject: {fileID: 1316526695}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -29544,7 +29554,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1763691405}
   disableObject: {fileID: 1763691405}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -29725,6 +29735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
+      propertyPath: onHide.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
       propertyPath: spawnPositions.Array.data[0]
       value: 
       objectReference: {fileID: 897366703}
@@ -29796,6 +29811,31 @@ PrefabInstance:
     - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
         type: 3}
       propertyPath: onHideRoomIncomplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: onHide.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: onHide.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: onHide.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1388457106}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: onHide.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableNextRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641534327923300487, guid: d34cc58f834cef7449b44db638d93bc2,
+        type: 3}
+      propertyPath: onHide.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5641534327923300486, guid: d34cc58f834cef7449b44db638d93bc2,
@@ -29916,7 +29956,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 986062785}
   disableObject: {fileID: 986062785}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -30594,7 +30634,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1897420628}
   disableObject: {fileID: 1897420628}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -31643,6 +31683,11 @@ PrefabInstance:
     - target: {fileID: 2525031623418102434, guid: acd3929497de2a148971cf60233fb38c,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 546983727169679915, guid: acd3929497de2a148971cf60233fb38c,
+        type: 3}
+      propertyPath: dontWaitForVisible
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2525031623891614333, guid: acd3929497de2a148971cf60233fb38c,
@@ -33287,7 +33332,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1656391674}
   disableObject: {fileID: 1656391674}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -33919,7 +33964,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 112040353}
   disableObject: {fileID: 112040353}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -34227,7 +34272,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 866653592}
   disableObject: {fileID: 866653592}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -34299,7 +34344,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 617211678}
   disableObject: {fileID: 617211678}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -34912,7 +34957,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1056082634}
   disableObject: {fileID: 1056082634}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -35455,7 +35500,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1276137121}
   disableObject: {fileID: 1276137121}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -37123,7 +37168,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1031632998}
   disableObject: {fileID: 1031632998}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -37636,7 +37681,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 2012360665}
   disableObject: {fileID: 2012360665}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -39740,7 +39785,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1940390256}
   disableObject: {fileID: 1940390256}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -39958,7 +40003,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 554644773}
   disableObject: {fileID: 554644773}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -40224,7 +40269,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1366285254}
   disableObject: {fileID: 1366285254}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -41306,7 +41351,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1959844685}
   disableObject: {fileID: 1959844685}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -41901,7 +41946,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 710523599}
   disableObject: {fileID: 710523599}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -42234,6 +42279,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 546983727169679915, guid: acd3929497de2a148971cf60233fb38c,
+        type: 3}
+      propertyPath: dontWaitForVisible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2525031623891614333, guid: acd3929497de2a148971cf60233fb38c,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -42539,7 +42589,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 748040640}
   disableObject: {fileID: 748040640}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -42760,7 +42810,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1295180028}
   disableObject: {fileID: 1295180028}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -42905,7 +42955,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 388541446}
   disableObject: {fileID: 388541446}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -42983,7 +43033,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 226518582}
   disableObject: {fileID: 226518582}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -43413,7 +43463,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1379926428}
   disableObject: {fileID: 1379926428}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -43459,7 +43509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577362391}
   m_LocalRotation: {x: -0, y: 0.6899272, z: -0, w: 0.7238788}
-  m_LocalPosition: {x: -14.82, y: 0, z: 28.63}
+  m_LocalPosition: {x: 5.15, y: 0, z: 14.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -43535,7 +43585,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1958082226}
   disableObject: {fileID: 1958082226}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -44627,7 +44677,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 2078203077}
   disableObject: {fileID: 2078203077}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -46248,7 +46298,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1954871251}
   disableObject: {fileID: 1954871251}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -46873,7 +46923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727393255}
   m_LocalRotation: {x: -0, y: 0.6363018, z: -0, w: -0.7714402}
-  m_LocalPosition: {x: -5.529999, y: 0, z: -24.5}
+  m_LocalPosition: {x: -3.73, y: 0, z: -6.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544805350}
@@ -47980,7 +48030,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1650480954}
   disableObject: {fileID: 1650480954}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -48151,7 +48201,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1382248321}
   disableObject: {fileID: 1382248321}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -48223,7 +48273,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 2096897988}
   disableObject: {fileID: 2096897988}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -48651,7 +48701,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1236173503}
   disableObject: {fileID: 1236173503}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -50480,7 +50530,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1141491778}
   disableObject: {fileID: 1141491778}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -50552,7 +50602,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 725366593}
   disableObject: {fileID: 725366593}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -52028,7 +52078,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1002178466}
   disableObject: {fileID: 1002178466}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -52209,7 +52259,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1026978816}
   disableObject: {fileID: 1026978816}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -54160,7 +54210,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1942821075}
   disableObject: {fileID: 1942821075}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -55012,7 +55062,7 @@ MonoBehaviour:
   showTriggerObject: {fileID: 1443602769}
   disableObject: {fileID: 1443602769}
   enableObject: {fileID: 0}
-  distanceThreshold: 0
+  distanceThreshold: 2
   startHidden: 0
   hideCooldown: 1
   hideCooldownRandom: 7
@@ -55568,6 +55618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 546983727169679915, guid: acd3929497de2a148971cf60233fb38c,
+        type: 3}
+      propertyPath: dontWaitForVisible
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2525031623891614333, guid: acd3929497de2a148971cf60233fb38c,
         type: 3}

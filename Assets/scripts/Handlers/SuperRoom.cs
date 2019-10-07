@@ -17,6 +17,7 @@ public class SuperRoom : Room
     private bool firstDoorJebait = true;
     private int signIndex = -1;
     private GameObject currentSign;
+    private bool hasSignCompleteCalled;
 
     public override void Start()
     {
@@ -28,7 +29,6 @@ public class SuperRoom : Room
             appear.Hide();
             appear.Disable();
 
-            Debug.Log("hide " + appear.gameObject.name);
             var signSpawns = new GameObject[signPositions.transform.childCount];
             for(var i = 0; i < signPositions.transform.childCount; i++)
             {
@@ -44,6 +44,12 @@ public class SuperRoom : Room
     public override void Update()
     {
         base.Update();
+
+        if(!hasSignCompleteCalled && this.AllSignsFallen())
+        {
+            hasSignCompleteCalled = true;
+            onSignComplete?.Invoke();
+        }
 
         if(RoomHandler.Instance == null)
         {
@@ -81,7 +87,7 @@ public class SuperRoom : Room
 
             if(doorJebaits < doorJebaitAmount && door.IsOpen() && distance <= doorJebaitDistance)
             {
-                if(signIndex >= signs.Length)
+                if(hasSignCompleteCalled)
                 {
                     doorJebaits++;
                 }
@@ -99,6 +105,7 @@ public class SuperRoom : Room
         if(signIndex >= signs.Length)
         {
             onSignComplete?.Invoke();
+            hasSignCompleteCalled = true;
             return;
         }
 
@@ -112,5 +119,23 @@ public class SuperRoom : Room
             appear.Disable();
             this.NextSign();
         });
+    }
+
+    private bool AllSignsFallen()
+    {
+        foreach(var sign in signs)
+        {
+            var signComponent = sign.GetComponent<Sign>();
+
+            if(signComponent != null)
+            {
+                if (!signComponent.IsFallen())
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
