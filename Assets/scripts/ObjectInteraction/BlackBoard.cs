@@ -13,6 +13,11 @@ public class BlackBoard : MonoBehaviour
     [SerializeField] GameObject mark;
     [SerializeField] int questionsWrongAllowed;
 
+    [HideInInspector] TextMeshPro[] answerObjects;
+
+    Color32 unselected = new Color32(255, 255, 255, 255);
+    Color32 highlighted = new Color32(102, 152, 88, 255);
+
     TextMeshPro tmMark;
     private Question[] questions = new Question[6];
 
@@ -89,12 +94,34 @@ public class BlackBoard : MonoBehaviour
         tmAnswer2.SetText(questions[questionIndex].answer2);
         tmAnswer3.SetText(questions[questionIndex].answer3);
         tmAnswer4.SetText(questions[questionIndex].answer4);
+
+        answerObjects = new TextMeshPro[] { tmAnswer1, tmAnswer2, tmAnswer3, tmAnswer4 };
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        foreach (var answer in answerObjects)
+        {
+
+            var answerColour = answer.GetComponent<TextMeshPro>(); 
+
+            if (answerColour.color == highlighted)
+            {
+                answerColour.color = unselected;
+            }
+        }
+
+        if (Camera.main &&
+                Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit) &&
+                string.Equals(hit.transform.gameObject.tag, "BoardAnswer"))
+        {
+            var hitKey = hit.transform.gameObject;
+
+            hitKey.GetComponent<TextMeshPro>().color = highlighted;
+
+        } 
     }
 
     void OnClick(GameObject obj)
