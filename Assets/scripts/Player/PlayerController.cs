@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
     private GameObject ui3D2D;
     private Vector3 currentCameraPosition;
     private Vector3 currentVelocity;
+    private bool setVelocityNextUpdate;
 
     private void Awake()
     {
@@ -563,7 +564,15 @@ public class PlayerController : MonoBehaviour
         velocity.Normalize();
         velocity *= GetTargetSpeed();
 
-        currentVelocity = currentVelocity + (velocity - currentVelocity) * Time.fixedDeltaTime * 5f;
+        if (setVelocityNextUpdate)
+        {
+            setVelocityNextUpdate = false;
+            currentVelocity = velocity;
+        }
+        else
+        {
+            currentVelocity = currentVelocity + (velocity - currentVelocity) * Time.fixedDeltaTime * 5f;
+        }
 
         var difference = currentVelocity - rb.velocity;
         difference.y = 0;
@@ -741,6 +750,11 @@ public class PlayerController : MonoBehaviour
         var rotQ = Quaternion.Euler(cameraPitch + ((IsThirdPerson()) ? currentThirdPersonCameraPitchOffset : 0) + pitchOffset, cameraYaw, 0);
 
         return rotQ;
+    }
+
+    public void NotifyTeleported()
+    {
+        setVelocityNextUpdate = true;
     }
 }
 

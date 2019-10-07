@@ -72,9 +72,9 @@ public class Door : MonoBehaviour
         }
     }
 
-    public void Close()
+    public void Close(bool playSound = true)
     {
-        if (open && closeSound)
+        if (playSound && open && closeSound)
         {
             closeSound.Stop();
             closeSound.Play();
