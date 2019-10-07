@@ -53,6 +53,38 @@ public class RoomHandler : MonoBehaviour
         {
             player = FindObjectOfType<PlayerController>();
         }
+
+        if(currentRoom != null)
+        {
+            var room = currentRoom.GetComponent<Room>();
+
+            var overrideRoom = room.nextRoomOverride;
+            if(overrideRoom != null)
+            {
+                if (room.nextRoomEnabled)
+                {
+                    if (!overrideRoom.gameObject.activeSelf)
+                    {
+                        overrideRoom.gameObject.SetActive(true);
+
+                        var overrideDoor = overrideRoom.GetDoor();
+                        if(overrideDoor != null)
+                        {
+                            room.GetPortal().destination = overrideRoom.GetPortal();
+                            overrideRoom.GetPortal().destination = room.GetPortal();
+                            overrideRoom.GetDoor().Open(false);
+                        }
+                    }
+                }
+                else
+                {
+                    if (overrideRoom.gameObject.activeSelf)
+                    {
+                        overrideRoom.gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
     }
 
     public void IncrementRoom()

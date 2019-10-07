@@ -196,6 +196,11 @@ public class Portal : MonoBehaviour
         portalEnabled = false;
     }
 
+    public bool IsPortalEnabled()
+    {
+        return portalEnabled;
+    }
+
     private void PositionCamera()
     {
         portalCamera.transform.position = this.GetCameraPosition();

@@ -17,7 +17,9 @@ public class Room : MonoBehaviour
     public AudioSource ambientSound;
     public bool musicSoundOn = true;
     public bool ambientSoundOn = true;
-    public GameObject[] completionObjects;
+    public Room nextRoomOverride;
+    public bool nextRoomEnabled;
+    public GameObject[] completionObjects;    
 
     private Door door;
     private Portal portal;
@@ -263,5 +265,10 @@ public class Room : MonoBehaviour
     public void DisableMusic()
     {
         musicSoundOn = false;
+    }
+
+    public void EnableNextRoom()
+    {
+        nextRoomEnabled = true;
     }
 }
