@@ -9219,6 +9219,7 @@ MonoBehaviour:
   ambientVolume: 1
   doorStartOpen: 0
   completeText: 
+  completeFontSize: 1.8
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
@@ -11061,6 +11062,102 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388541446}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &390815463
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 589308338}
+    m_Modifications:
+    - target: {fileID: 8300936008974423452, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_Name
+      value: Mirror Variant 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.233
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.693
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5218755
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.85302174
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -62.916004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5000005
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8277db40d63c7d4197556add5c13c6f, type: 3}
+--- !u!4 &390815464 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300936008974518716, guid: e8277db40d63c7d4197556add5c13c6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 390815463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &390815465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8300936008974423452, guid: e8277db40d63c7d4197556add5c13c6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 390815463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &395634291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 40fb97619bbf5704d8d39b78b64a33c8,
@@ -12049,6 +12146,7 @@ MonoBehaviour:
   ambientVolume: 0.3
   doorStartOpen: 0
   completeText: It wasn't always like that.
+  completeFontSize: 0.86
   ambientSound: {fileID: 1567963}
   musicSoundOn: 1
   ambientSoundOn: 1
@@ -16467,6 +16565,7 @@ Transform:
   - {fileID: 908230985}
   - {fileID: 592969778}
   - {fileID: 448958957}
+  - {fileID: 390815464}
   m_Father: {fileID: 315831155}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19017,6 +19116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691652694}
   - component: {fileID: 691652695}
+  - component: {fileID: 691652696}
   m_Layer: 0
   m_Name: Final Room
   m_TagString: Untagged
@@ -19059,6 +19159,7 @@ MonoBehaviour:
   ambientVolume: 1
   doorStartOpen: 0
   completeText: 
+  completeFontSize: 1
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
@@ -19072,6 +19173,102 @@ MonoBehaviour:
   onSignComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &691652696
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691652693}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5be1a36e37316954c91bb5181b5424ac, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &692725369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30114,7 +30311,7 @@ MonoBehaviour:
   hubRoom: {fileID: 315831154}
   propsObject: {fileID: 589308337}
   painting: {fileID: 1404640935}
-  startingRoom: 3
+  startingRoom: 0
   rooms:
   - {fileID: 1839664618}
   - {fileID: 447473111}
@@ -38358,6 +38555,7 @@ MonoBehaviour:
   ambientVolume: 0.5
   doorStartOpen: 0
   completeText: 
+  completeFontSize: 1
   ambientSound: {fileID: 1136759260}
   musicSoundOn: 1
   ambientSoundOn: 0
@@ -38389,6 +38587,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1388457106}
         m_MethodName: EnableAmbientSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 691652695}
+        m_MethodName: EnableNextRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44778,7 +44987,8 @@ MonoBehaviour:
   musicFadeMultiplier: 1
   ambientVolume: 1
   doorStartOpen: 0
-  completeText: 
+  completeText: Silence can be deafening.
+  completeFontSize: 1.5
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
@@ -47836,6 +48046,7 @@ MonoBehaviour:
   ambientVolume: 1
   doorStartOpen: 0
   completeText: Don't you remember?
+  completeFontSize: 1.8
   ambientSound: {fileID: 0}
   musicSoundOn: 1
   ambientSoundOn: 1
@@ -47844,6 +48055,7 @@ MonoBehaviour:
   completionObjects:
   - {fileID: 413859704}
   - {fileID: 1961225814}
+  - {fileID: 390815465}
 --- !u!82 &1839664621
 AudioSource:
   m_ObjectHideFlags: 0

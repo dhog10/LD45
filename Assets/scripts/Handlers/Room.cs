@@ -14,6 +14,7 @@ public class Room : MonoBehaviour
     public float ambientVolume = 1f;
     public bool doorStartOpen = false;
     public string completeText = "";
+    public float completeFontSize = 1.8f;
     public AudioSource ambientSound;
     public bool musicSoundOn = true;
     public bool ambientSoundOn = true;
@@ -151,6 +152,12 @@ public class Room : MonoBehaviour
             currentAmbientVolume = Mathf.Max(0f, currentAmbientVolume - musicFadeMultiplier * Time.deltaTime);
         }
 
+        if(ExitScreen.Instance != null && ExitScreen.Instance.HasExited())
+        {
+            currentMusicVolume = 0f;
+            currentAmbientVolume = 0f;
+        }
+
         if(musicAudio != null)
         {
             musicAudio.volume = currentMusicVolume * musicVolume;
@@ -216,6 +223,7 @@ public class Room : MonoBehaviour
         if(completeText.Length > 0)
         {
             RoomHandler.Instance.painting.SetText(completeText);
+            RoomHandler.Instance.painting.SetFontSize(completeFontSize);
         }
 
         if (completionObjects != null)

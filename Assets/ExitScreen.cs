@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ExitScreen : MonoBehaviour
 {
+    public static ExitScreen Instance;
+
     public AudioSource cinematicHit;
     public AudioSource creditMusic;
     public GameObject canvasObject;
@@ -17,6 +19,7 @@ public class ExitScreen : MonoBehaviour
     void Start()
     {
         canvasObject.gameObject.SetActive(false);
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -55,5 +58,10 @@ public class ExitScreen : MonoBehaviour
 
         creditsActive = true;
         creditsStarted = Time.time;
+    }
+
+    public bool HasExited()
+    {
+        creditsActive = true;
     }
 }

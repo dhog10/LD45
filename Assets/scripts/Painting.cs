@@ -43,4 +43,9 @@ public class Painting : MonoBehaviour
     {
         textMesh.text = message;
     }
+
+    public void SetFontSize(float size)
+    {
+        textMesh.fontSize = size;
+    }
 }
