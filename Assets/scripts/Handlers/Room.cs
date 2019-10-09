@@ -219,7 +219,7 @@ public class Room : MonoBehaviour
         complete = true;
         RoomHandler.Instance.IncrementRoom();
         RoomHandler.Instance.onRoomCompleted?.Invoke();
-
+        RoomHandler.Instance.hubRoom?.GetComponent<Room>()?.GetDoor()?.Open();
         if(completeText.Length > 0)
         {
             RoomHandler.Instance.painting.SetText(completeText);

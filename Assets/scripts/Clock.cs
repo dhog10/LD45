@@ -14,6 +14,8 @@ public class Clock : MonoBehaviour
     [SerializeField] private AnimationCurve secondHandTickCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
     [SerializeField] private AnimationCurve minuteHandTickCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
     [SerializeField] private AnimationCurve hourHandTickCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
+    [Space(5)]
+    [SerializeField] private float tickRotationAmount = 6.0f;
     private IEnumerator secondHandMover;
     private IEnumerator minuteHandMover;
     private IEnumerator hourHandMover;
@@ -68,7 +70,7 @@ public class Clock : MonoBehaviour
         {
             var originalHandRotationEuler = hand.localRotation.eulerAngles;
             var newHandRotationEuler = originalHandRotationEuler;
-            newHandRotationEuler.z += 6f;
+            newHandRotationEuler.z += tickRotationAmount;
             if (newHandRotationEuler.z > 360.0f)
             {
                 newHandRotationEuler.z -= 360.0f;

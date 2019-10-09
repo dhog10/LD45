@@ -81,7 +81,7 @@ public class FishingRod : MonoBehaviour
 
     private void Update()
     {
-        if(rodTip == null || !rodTip.activeInHierarchy)
+        if (!rodTip || !rodTip.activeInHierarchy)
         {
             return;
         }
@@ -185,9 +185,9 @@ public class FishingRod : MonoBehaviour
         bobberInstance.name = bobberName;
         var bobberTransform = bobberInstance.transform;
 
-        if (bobberTransform == null)
+        if (!bobberTransform)
         {
-            yield return null;
+            yield break;
         }
 
         var bobberScript = bobberInstance.GetComponent<BobberScript>();
@@ -203,6 +203,11 @@ public class FishingRod : MonoBehaviour
         var castDuration = minCastDuration + ((Vector3.Distance(start, end) - minCastDistance) / (maxCastDistance - minCastDistance) * (maxCastDuration - minCastDuration));
         while (t <= 1.0f)
         {
+            if (!bobberTransform)
+            {
+                yield break;
+            }
+
             bobberTransform.position = new Vector3(Mathf.Lerp(start.x, end.x, bobberCurveXZ.Evaluate(t)),
                                                    start.y + (bobberCurveY.Evaluate(t) * yDistance),
                                                    Mathf.Lerp(start.z, end.z, bobberCurveXZ.Evaluate(t)));
@@ -212,9 +217,9 @@ public class FishingRod : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        if (bobberTransform == null)
+        if (!bobberTransform)
         {
-            yield return null;
+            yield break;
         }
 
         bobberTransform.position = end;
@@ -237,9 +242,9 @@ public class FishingRod : MonoBehaviour
                 y = Mathf.Lerp(end.y, initialBobY, 0.5f - (t - 0.5f));
             }
 
-            if(bobberTransform == null)
+            if (!bobberTransform)
             {
-                yield return null;
+                yield break;
             }
 
             bobberTransform.position = new Vector3(bobberTransform.position.x,
