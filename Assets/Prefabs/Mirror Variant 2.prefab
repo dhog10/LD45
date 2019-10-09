@@ -48,7 +48,7 @@ MonoBehaviour:
   m_InfluenceVolume:
     m_Shape: 0
     m_Offset: {x: 0, y: 0, z: 0}
-    m_BoxSize: {x: 10, y: 10, z: 10}
+    m_BoxSize: {x: 0.6, y: 0.004, z: 1.7}
     m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
     m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
     m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -156,7 +156,6 @@ GameObject:
   - component: {fileID: 1702430143295878630}
   - component: {fileID: 1702430143295878629}
   - component: {fileID: 1702430143295878628}
-  - component: {fileID: 1702430143295878635}
   m_Layer: 0
   m_Name: MirrorFace
   m_TagString: Untagged
@@ -224,20 +223,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1702430143295878635
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702430143295878634}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8300936008974423448
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8300936008974518716}
+  - component: {fileID: 390815466}
   m_Layer: 0
   m_Name: Mirror Variant 2
   m_TagString: Untagged
@@ -340,10 +326,23 @@ Transform:
   m_GameObject: {fileID: 8300936008974423452}
   m_LocalRotation: {x: 0, y: -0.013089582, z: 0, w: 0.99991435}
   m_LocalPosition: {x: 0.325, y: 0, z: -0.744}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5000005, y: 1.5, z: 1.5000005}
   m_Children:
   - {fileID: 1702430143295878630}
   - {fileID: 8300936008974518712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -1.5, z: 0}
+--- !u!65 &390815466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300936008974423452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.3, z: 0.2}
+  m_Center: {x: 0, y: 0.6, z: 0}

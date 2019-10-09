@@ -81,6 +81,11 @@ public class FishingRod : MonoBehaviour
 
     private void Update()
     {
+        if(rodTip == null || !rodTip.activeInHierarchy)
+        {
+            return;
+        }
+
         // Checking if player can cast rod & generating hit point
         var canCast = false;
         var hit = new RaycastHit();
@@ -179,6 +184,12 @@ public class FishingRod : MonoBehaviour
         bobberInstance = Instantiate(bobberPrefab, start, Quaternion.identity);
         bobberInstance.name = bobberName;
         var bobberTransform = bobberInstance.transform;
+
+        if (bobberTransform == null)
+        {
+            yield return null;
+        }
+
         var bobberScript = bobberInstance.GetComponent<BobberScript>();
         bobberScript.enabled = false;
 
@@ -200,6 +211,12 @@ public class FishingRod : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+
+        if (bobberTransform == null)
+        {
+            yield return null;
+        }
+
         bobberTransform.position = end;
 
         // Creating a splash
@@ -218,6 +235,11 @@ public class FishingRod : MonoBehaviour
             else
             {
                 y = Mathf.Lerp(end.y, initialBobY, 0.5f - (t - 0.5f));
+            }
+
+            if(bobberTransform == null)
+            {
+                yield return null;
             }
 
             bobberTransform.position = new Vector3(bobberTransform.position.x,

@@ -36,6 +36,11 @@ public class Basketball : MonoBehaviour
     }
     void OnCollisionEnter (Collision collision)
     {
+        if(Time.time < 5f)
+        {
+            return;
+        }
+
         tickSource.Play();
     }
 

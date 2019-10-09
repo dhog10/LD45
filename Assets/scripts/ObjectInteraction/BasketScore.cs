@@ -7,6 +7,7 @@ public class BasketScore : MonoBehaviour
 {
     public int scoreNeeded = 5;
     public UnityEvent onScoreReached;
+    public UnityEvent onDunk;
 
     private int score = 0;
     private float lastScore = 0f;
@@ -37,5 +38,7 @@ public class BasketScore : MonoBehaviour
         {
             onScoreReached.Invoke();
         }
+
+        onDunk.Invoke();
     }
 }

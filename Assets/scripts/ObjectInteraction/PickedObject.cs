@@ -40,22 +40,35 @@ public class PickedObject : MonoBehaviour
     {
         if (obj == gameObject)
         {
-            if (pickedUp == false)
+            this.PickUp();
+        }
+    }
+    
+    void EnableColliders(bool enabled)
+    {
+        foreach(var collider in this.GetComponentsInChildren<Collider>())
+        {
+            collider.enabled = enabled;
+        }
+    }
+
+    void PickUp()
+    {
+        if (pickedUp == false)
+        {
+
+            var objRigidbody = GetComponent<Rigidbody>();
+
+            if (objRigidbody.isKinematic == false)
             {
 
-                var objRigidbody = GetComponent<Rigidbody>();
+                objRigidbody.useGravity = false;
+                objRigidbody.isKinematic = true;
 
-                if (objRigidbody.isKinematic == false)
-                {
-
-                    objRigidbody.useGravity = false;
-                    objRigidbody.isKinematic = true;
-
-                    this.transform.position = pickUpPoint.position;
-                    this.transform.parent = pickUpObject.transform;
-                    pickedUp = true;
-
-                }
+                this.transform.position = pickUpPoint.position;
+                this.transform.parent = pickUpObject.transform;
+                pickedUp = true;
+                this.EnableColliders(false);
             }
         }
     }
@@ -78,7 +91,7 @@ public class PickedObject : MonoBehaviour
 
             this.transform.parent = originalParent;
             pickedUp = false;
-
+            this.EnableColliders(true);
         }
     }
 }
